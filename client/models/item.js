@@ -2,7 +2,7 @@ const mongoose = require("moongoose");
 
 const Schema = moongoose.Schema;
 
-const itemSchema = new Schema({
+const ItemSchema = new Schema({
   name: { type: String, required: true },
   category: { type: String, required: true },
   addedBy: { type: String, required: true },
@@ -10,6 +10,6 @@ const itemSchema = new Schema({
   expiration: { type: Date, required: true },
 });
 
-const Item = mongoose.model("Item", itemSchema);
+const Item = mongoose.model("Item", ItemSchema);
 
 module.exports = Item;

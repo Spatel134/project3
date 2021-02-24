@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const locationSchema = new Schema({
+const LocationSchema = new Schema({
   name: { type: String, required: true },
   street: { type: String, required: true },
   city: { type: String, required: true },
@@ -11,6 +11,6 @@ const locationSchema = new Schema({
   items: [{ type: Schema.Types.ObjectId, ref: "Item" }],
 });
 
-const Location = mongoose.model("Location", locationSchema);
+const Location = mongoose.model("Location", LocationSchema);
 
 module.exports = Location;
