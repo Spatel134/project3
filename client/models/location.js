@@ -8,7 +8,7 @@ const locationSchema = new Schema({
   city: { type: String, required: true },
   state: { type: String, required: true },
   zipcode: { type: Number, required: true },
-  items: [{ type: ObjectId, ref: "itemSchema" }],
+  items: [{ type: Schema.Types.ObjectId, ref: "Item" }],
 });
 
 const Location = mongoose.model("Location", locationSchema);
