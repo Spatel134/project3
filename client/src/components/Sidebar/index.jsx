@@ -49,7 +49,26 @@ const Sidebar = () => {
           </ul> */}
         </div>
       </nav>
-     
+      <ul className="sidenav sidenav-fixed" id="mobile-links">
+        <li>
+          <a href="/api/home">Home</a>
+        </li>
+        <li>
+          <a href="/api/addItem">Add to Fridge</a>
+        </li>
+        <li>
+          <a href="/api/ownerPage">Owner Page</a>
+        </li>
+      </ul>
+      {/* <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> */}
+
+      {/* <script>
+    $(document).ready(function () {
+      $(".sidenav").sidenav();
+    });
+  </script> */}
     </div>
   );
 };
