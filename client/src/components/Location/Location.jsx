@@ -10,7 +10,7 @@ const Location = ({ name, colSize }) => {
 
                 </div>
                 <div class="card-action">
-                    <Link to="/single-fridge">Click here to View</Link>
+                    <Link to="/single-location">Click here to View</Link>
                 </div>
             </div>
         </div>

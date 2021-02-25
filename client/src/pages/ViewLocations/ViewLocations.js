@@ -1,5 +1,5 @@
 import React from 'react';
-import Fridge from '../../components/Fridge/Fridge';
+import Location from '../../components/Location/Location';
 
 const ViewLocations = () => {
     const data = [
@@ -30,7 +30,7 @@ const ViewLocations = () => {
                     <div className="col s12">
                         <h4 className="center-align">View Fridges</h4>
                     </div>
-                    {data.map(({ name }) => (<Fridge name={name} colSize={colSize} />))}
+                    {data.map(({ name }) => (<Location name={name} colSize={colSize} />))}
                 </div>
 
             </div>
