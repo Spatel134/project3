@@ -52,6 +52,9 @@ const Sidebar = () => {
         <li>
           <a href="/api/locations">Locations</a>
         </li>
+        <li>
+          <a href="/api/social">Contact Us</a>
+        </li>
       </ul>
     </div>
   );
