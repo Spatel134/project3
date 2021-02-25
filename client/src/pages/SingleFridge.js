@@ -3,7 +3,7 @@ import Fridge from '../components/Fridge/Fridge';
 
 const SingleFridge = () => {
     return (
-        <div>
+        <div >
             <Fridge name="banana" />
         </div>
     )
