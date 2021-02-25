@@ -17,7 +17,7 @@ const Sidebar = () => {
 
     //   const sideNav = document.querySelector(".sidenav");
     //   instances[0].open();
-    });
+    // });
   });
   return (
     <div>
