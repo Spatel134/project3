@@ -27,7 +27,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.11.18"
+    "materialize-css": "^1.0.0-rc.2",
+    "mongoose": "^5.11.17"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
