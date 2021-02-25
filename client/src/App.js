@@ -7,8 +7,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import SingleFridge from "./pages/SingleFridge";
-import ViewFridge from "./pages/ViewFrigde";
+import SingleLocation from "./pages/ViewSingleLocation/SingleLocation";
+import ViewLocations from "./pages/ViewLocations/ViewLocations";
 import M from "materialize-css";
 import { useEffect } from "react";
 
@@ -38,8 +38,8 @@ function App() {
       <Home />
       <Router>
         <Switch>
-          <Route path="/view-fridge" component={ViewFridge} />
-          <Route path="/single-fridge" component={SingleFridge} />
+          <Route path="/view-locations" component={ViewLocations} />
+          <Route path="/single-location" component={SingleLocation} />
         </Switch>
       </Router>
 

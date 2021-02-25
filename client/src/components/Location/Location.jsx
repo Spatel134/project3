@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const Fridge = ({ name, colSize }) => {
+const Location = ({ name, colSize }) => {
     return (
         <div className={`col s${colSize}`}>
             <div class="card blue-grey darken-1">
@@ -17,4 +17,4 @@ const Fridge = ({ name, colSize }) => {
     )
 }
 
-export default Fridge;
+export default Location;

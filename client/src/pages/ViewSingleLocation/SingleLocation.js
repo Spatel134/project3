@@ -1,11 +1,11 @@
 import React from 'react';
-import Fridge from '../components/Fridge/Fridge';
+import Fridge from '../../components/Fridge/Fridge';
 
-const SingleFridge = () => {
+const SingleLocation = () => {
     return (
         <div >
             <Fridge name="banana" />
         </div>
     )
 }
-export default SingleFridge;
+export default SingleLocation;

@@ -1,7 +1,7 @@
 import React from 'react';
-import Fridge from '../components/Fridge/Fridge';
+import Fridge from '../../components/Fridge/Fridge';
 
-const ViewFridge = () => {
+const ViewLocations = () => {
     const data = [
         {
             name: "Atlanta Fridge",
@@ -37,4 +37,4 @@ const ViewFridge = () => {
         </div>
     )
 }
-export default ViewFridge;
+export default ViewLocations;
