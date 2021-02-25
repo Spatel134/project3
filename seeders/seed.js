@@ -45,8 +45,7 @@ let locations = [
 db.Location.deleteMany({})
     .then(() => db.Location.collection.insertMany(locations))
     .then(info => {
-        console.log(locations)
-        console.log("in the second call back")
+
         console.log(info.result.n + " records inserted!");
         process.exit(0);
 
