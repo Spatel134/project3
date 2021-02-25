@@ -55,33 +55,6 @@ const ItemAdd = () => {
                 </select>
                 <label>Category</label>
               </div>
-
-              <div className='input-field col s12 s12'>
-                <select className='icons'>
-                  <option value='' disabled selected>
-                    Choose your option
-                  </option>
-                  <option
-                    value=''
-                    dataIcon='https://www.purdue.edu/uns/images/2020/adair-farmLO.jpg'
-                    className='left'
-                  >
-                    Produce
-                  </option>
-                  <option
-                    value=''
-                    data-icon='images/office.jpg'
-                    className='left'
-                  >
-                    example 2
-                  </option>
-                  <option value='' data-icon='images/yuna.jpg' className='left'>
-                    example 3
-                  </option>
-                </select>
-                <label>Images in select</label>
-              </div>
-
               <a className='waves-effect waves-light btn'>Update Item</a>
             </form>
           </div>
