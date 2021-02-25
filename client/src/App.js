@@ -2,6 +2,8 @@
 // import axios from "axios";
 // import { response } from "express";
 
+import Home from './pages/Home'
+
 function App() {
 //   useEffect(() => {
 //     axios
@@ -15,7 +17,7 @@ function App() {
 //   }, []);
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Home/>
     </div>
   );
 }
