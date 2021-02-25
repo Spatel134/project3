@@ -19,4 +19,8 @@ router
   .get(locationsController.findByIdWithItems)
   .post(locationsController.createItem);
 
+//   router
+//   .route ("/:id/removeItem/:itemId")
+//   .delete(locationsController.deleteItem)
+
 module.exports = router;
