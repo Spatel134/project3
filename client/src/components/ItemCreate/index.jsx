@@ -2,8 +2,29 @@ import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 
-
 const ItemAdd = () => {
+  const [name, setName] = useState('')
+  const [category, setCategory] = useState('')
+  const [addedBy, setAddedBy] = useState('')
+  const [expiration, setExpiration] = useState('')
+  const handleFormSubmit = event => {
+    event.preventDefault()
+
+    axios
+      .post('/api/items', {
+        name,
+        category,
+        addedBy,
+        expiration
+      })
+      .then(response => {
+        console.log(response)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   return (
     <div>
       <div className='container'>
@@ -13,15 +34,17 @@ const ItemAdd = () => {
             <img
               className='responsive-img'
               src='   https://wpcdn.us-east-1.vip.tn-cloud.net/www.sactownmag.com/content/uploads/2020/10/121610343_2690149421252095_9180172192574381574_n.jpg'
-              alt="Colorfully design community fridge"
+              alt='Colorfully design community fridge'
             />
           </div>
           <div className='col s6'>
-            <form className='col s12'>
+            <form className='col s12' onSubmit={handleFormSubmit}>
               <div className='input-field col s12  l12'>
                 <input
                   id='name'
                   type='text'
+                  value={name}
+                  onChange={event => setName(event.target.value)}
                   className='validate'
                   placeHolder='Nature Valley granola bar'
                 />
@@ -33,6 +56,8 @@ const ItemAdd = () => {
               <div className='input-field col s12 l12'>
                 <input
                   id='addedBy'
+                  value={addedBy}
+                  onChange={event => setAddedBy(event.target.value)}
                   type='text'
                   className='validate'
                   placeHolder='johndough@gmail.com'
@@ -42,24 +67,33 @@ const ItemAdd = () => {
                 </label>
               </div>
               <div className='input-field col s12'>
-                <input id='date' type='date' className='validate' />
+                <input
+                  id='date'
+                  type='date'
+                  value={expiration}
+                  onChange={event => setExpiration(event.target.value)}
+                  className='validate'
+                />
                 <label className='active' for='expiration'>
                   Expiration Date
                 </label>
               </div>
               <div className='input-field col s12'>
-                <select>
+                <select
+                  value={category}
+                  onChange={event => setCategory(event.target.value)}
+                >
                   <option value='' disabled selected>
                     Choose your option
                   </option>
-                  <option value='1'>Frozen</option>
-                  <option value='2'>Produce</option>
-                  <option value='3'>Pantry</option>
-                  <option value='4'>Personal Care</option>
+                  <option defaultValue='Frozen'>Frozen</option>
+                  <option value='Produce'>Produce</option>
+                  <option value='Pantry'>Pantry</option>
+                  <option value='Personal Care'>Personal Care</option>
                 </select>
                 <label>Category</label>
               </div>
-              <a className='waves-effect waves-light btn'>Add Item</a>
+              <button className='waves-effect waves-light btn'>Add Item</button>
             </form>
           </div>
         </div>
