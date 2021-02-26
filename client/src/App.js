@@ -11,8 +11,9 @@ import SingleLocation from "./pages/ViewSingleLocation/SingleLocation";
 import ViewLocations from "./pages/ViewLocations/ViewLocations";
 import M from "materialize-css";
 import { useEffect } from "react";
+import axios from "axios";
 
-import Home from './pages/Home'
+import Home from "./pages/Home";
 
 //   useEffect(() => {
 //     axios
@@ -31,9 +32,17 @@ import Home from './pages/Home'
 function App() {
   useEffect(() => {
     M.AutoInit();
-  });
-  return (
+    axios
+      .get("/api/config")
+      .then((response) => {
+        console.log(`AXIOS CALL`,response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
+  return (
     <div className="App">
       <Router>
         <Switch>
