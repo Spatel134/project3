@@ -25,7 +25,7 @@ import Home from "./pages/Home";
 //         console.log(err);
 //       });
 //   }, []);
-// import ItemCreate from "./components/ItemCreate/index";
+import ItemCreate from "./components/ItemCreate/index";
 // import ItemUpdate from "./components/ItemUpdate/index";
 
 
@@ -50,6 +50,7 @@ function App() {
           <Route path="/view-locations" component={ViewLocations} />
           <Route path="/single-location" component={SingleLocation} />
         </Switch>
+        <ItemCreate/>
       </Router>
 
     </div >
