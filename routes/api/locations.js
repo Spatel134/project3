@@ -16,8 +16,8 @@ router
 
 router
   .route("/:id/addItems")
-  .get(locationsController.findByIdWithItems)
-  .post(locationsController.createItem);
+  // .get(locationsController.findByIdWithItems)
+  // .post(locationsController.createItem);
 
 //   router
 //   .route ("/:id/removeItem/:itemId")

@@ -1,9 +1,28 @@
 import React from "react";
+
 import Header from "../Header/Header"
+
+import M from "materialize-css";
+import { useEffect } from "react";
+
+
+
 
 const Sidebar = () => {
   useEffect(() => {
     M.AutoInit();
+
+    // Testing
+    // document.addEventListener("DOMContentLoaded", function () {
+    //   var elems = document.querySelectorAll(".sidenav");
+    //   const options = {
+    //     edge: "right",
+    //   };
+    //   var instances = M.Sidenav.init(elems, options);
+
+    //   const sideNav = document.querySelector(".sidenav");
+    //   instances[0].open();
+    // });
   });
   return (
     <div>
@@ -17,6 +36,12 @@ const Sidebar = () => {
         </li>
         <li>
           <a href="/api/ownerPage">Owner Page</a>
+        </li>
+        <li>
+          <a href="/api/locations">Locations</a>
+        </li>
+        <li>
+          <a href="/api/social">Contact Us</a>
         </li>
       </ul>
     </div>
