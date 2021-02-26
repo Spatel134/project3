@@ -5,6 +5,7 @@ module.exports = {
   findAll: function (req, res) {
     db.Location.find(req.query)
       .sort({ date: -1 })
+      .populate("items")
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
