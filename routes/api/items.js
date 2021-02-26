@@ -5,7 +5,7 @@ const itemsController = require("../../controllers/itemsController");
 router
   .route("/")
   .get(itemsController.findAll)
-  .post(itemsController.create);
+  .post(itemsController.createNew);
 
 // Matches with "/api/items/:id"
 router
