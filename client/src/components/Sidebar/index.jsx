@@ -27,22 +27,28 @@ const Sidebar = () => {
   return (
     <div>
       <Header title="Community" />
-      <ul className="sidenav sidenav-fixed" id="mobile-links">
+      <ul className="sidenav" id="mobile-links">
         <li>
-          <a href="/api/home">Home</a>
+          <a href="/">Home</a>
+        </li>
+        {/* <li>
+          <a href="/addItem">Add to Fridge</a>
+        </li> */}
+        {/* <li>
+          <a href="/ownerPage">Owner Page</a>
+        </li> */}
+        <li>
+          <a href="/forms">Forms</a>
         </li>
         <li>
-          <a href="/api/addItem">Add to Fridge</a>
+          <a href="/view-locations">View Locations</a>
         </li>
         <li>
-          <a href="/api/ownerPage">Owner Page</a>
+          <a href="/single-location">Single Locations</a>
         </li>
-        <li>
-          <a href="/api/locations">Locations</a>
-        </li>
-        <li>
-          <a href="/api/social">Contact Us</a>
-        </li>
+        {/* <li>
+          <a href="/social">Contact Us</a>
+        </li> */}
       </ul>
     </div>
   );
