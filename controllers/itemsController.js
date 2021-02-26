@@ -3,7 +3,7 @@ console.log("Item!");
 // Defining methods for the locationsController
 module.exports = {
   findAll: function (req, res) {
-    console.log(req.params)
+    console.log(req)
     db.Item.find(req.query)
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
