@@ -1,10 +1,12 @@
 import React from 'react';
+import Header from '../../components/Header/Header';
 import Location from '../../components/Location/Location';
+import Sidebar from '../../components/Sidebar';
 
 const ViewLocations = () => {
     const data = [
         {
-            name: "Atlanta Fridge",
+            name: "Bed-Stuy Fridge",
 
         }
     ]
@@ -22,17 +24,17 @@ const ViewLocations = () => {
 
     return (
         <div className="container">
+            <Header title="View Locations" />
+
             <div className="row">
                 <div className="col s12">
-                    <h3 className="center-align">Welcome to Community Fridges</h3>
+                    <h4 className="center-align">Scroll for Different Fridges</h4>
                 </div>
-                <div className="row">
-                    <div className="col s12">
-                        <h4 className="center-align">View Fridges</h4>
-                    </div>
+            </div>
+            <div className="row">
+                <div className="col s12">
                     {data.map(({ name }) => (<Location name={name} colSize={colSize} />))}
                 </div>
-
             </div>
         </div>
     )
