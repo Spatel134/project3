@@ -1,5 +1,5 @@
 const db = require("../models");
-
+console.log("Hello!");
 // Defining methods for the locationsController
 module.exports = {
   findAll: function (req, res) {
@@ -31,10 +31,26 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-//   deleteItem: function (req, res) {
-//     db.Location.findById({ _id: req.params.id })
-//     .then((dbModel) => dbModel.remove())
-//     .then((dbModel) => res.json(dbModel))
-//     .catch((err) => res.status(422).json(err));
-// },
+  //   deleteItem: function (req, res) {
+  //     db.Location.findById({ _id: req.params.id })
+  //     .then((dbModel) => dbModel.remove())
+  //     .then((dbModel) => res.json(dbModel))
+  //     .catch((err) => res.status(422).json(err));
+  // },
+  // create: (req, res) => {
+  //   const locationId = req.body.locationId;
+  //   const newItem = req.body.item;
+  //   db.Item.create(newItem)
+  //     .then((itemData) => {
+  //       return db.Location.findOneAndUpdate(
+  //         { _id: locationId },
+  //         { $push: { items: itemData._id } },
+  //         { new: true }
+  //       ).populate("items");
+  //     })
+  //     .then((updatedLocation) => {
+  //       res.json(updatedLocation);
+  //     })
+  //     .catch((err) => res.status(422).json(err.message));
+  // },
 };
