@@ -9,7 +9,7 @@ const ViewLocations = () => {
         }
     ]
     let colSize;
-    if (12 % data.length == 0 && 12 > data.length) {
+    if (12 % data.length === 0 && 12 > data.length) {
         console.log("fisrt statment");
         colSize = 12 / data.length;
         console.log(colSize)
