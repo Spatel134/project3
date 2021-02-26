@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Item from "../../components/Item/Item";
+import axios from 'axios';
 
 const SingleLocation = () => {
+
+    useEffect(() => {
+        loadItems();
+    }, []);
+
+    const loadItems = () => {
+        axios.get("/api/items").then(res => {
+            console.log(res)
+        });
+    }
+
+
     const items =
         [
             {

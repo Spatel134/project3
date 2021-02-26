@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Item = ({ item: { name, category, addedBy, date, expiration } }) => {
 
     return (
