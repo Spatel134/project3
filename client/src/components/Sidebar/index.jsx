@@ -2,6 +2,9 @@ import React from "react";
 import Header from "../Header/Header"
 
 const Sidebar = () => {
+  useEffect(() => {
+    M.AutoInit();
+  });
   return (
     <div>
       <Header title="Community" />
