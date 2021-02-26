@@ -23,20 +23,26 @@ const ViewLocations = () => {
 
 
     return (
-        <div className="container">
-            <Header title="View Locations" />
+      <>
+        <Sidebar />
 
-            <div className="row">
-                <div className="col s12">
-                    <h4 className="center-align">Scroll for Different Fridges</h4>
-                </div>
+        <div className="container">
+          <Header title="View Locations" />
+
+          <div className="row">
+            <div className="col s12">
+              <h4 className="center-align">Scroll for Different Fridges</h4>
             </div>
-            <div className="row">
-                <div className="col s12">
-                    {data.map(({ name }) => (<Location name={name} colSize={colSize} />))}
-                </div>
+          </div>
+          <div className="row">
+            <div className="col s12">
+              {data.map(({ name }) => (
+                <Location name={name} colSize={colSize} />
+              ))}
             </div>
+          </div>
         </div>
-    )
+      </>
+    );
 }
 export default ViewLocations;
