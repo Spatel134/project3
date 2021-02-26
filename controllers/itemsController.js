@@ -3,6 +3,7 @@ console.log("Item!");
 // Defining methods for the locationsController
 module.exports = {
   findAll: function (req, res) {
+    console.log(req)
     db.Item.find(req.query)
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
@@ -37,13 +38,13 @@ module.exports = {
       })
       .catch((err) => res.status(422).json(err.message));
   },
-    update: function (req, res) {
-      db.Item.findOneAndUpdate({ _id: req.params.id }, req.body, {
-        new: true,
-      })
-        .then((dbModel) => res.json(dbModel))
-        .catch((err) => res.status(422).json(err));
-    },
+  update: function (req, res) {
+    db.Item.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+    })
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
   //   remove: function (req, res) {
   //     db.Item.findById({ _id: req.params.id })
   //       .then((dbModel) => dbModel.remove())

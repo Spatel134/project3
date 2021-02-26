@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const Location = ({ name, colSize }) => {
+const Location = ({ name, id, colSize }) => {
+    console.log(id)
     return (
         <div className={`col s${colSize}`}>
             <div class="card blue-grey darken-1">
@@ -10,7 +11,7 @@ const Location = ({ name, colSize }) => {
 
                 </div>
                 <div class="card-action">
-                    <Link to="/single-location">Click here to View</Link>
+                    <Link to={`/single-location/${id}`}>Click here to View</Link>
                 </div>
             </div>
         </div>
