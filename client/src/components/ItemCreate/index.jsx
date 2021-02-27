@@ -1,15 +1,31 @@
 import React from 'react'
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const ItemAdd = () => {
   const [name, setName] = useState('')
   const [category, setCategory] = useState('')
   const [addedBy, setAddedBy] = useState('')
   const [expiration, setExpiration] = useState('')
+  const [location, setLocation] = useState('')
+  const [selectedLocation, setSelectedLocation] = useState('')
+  useEffect(() => {
+    axios
+      .get('api/locations')
+      .then(response => {
+        console.log(response)
+        setLocation({ locations: response.data })
+        console.log(location)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
   const handleFormSubmit = event => {
     event.preventDefault()
 
+    // useEffect to get location id from an axios call
+    // set response to locationchoice state and use that to map[ over a dropdown choices]
     axios
       .post('/api/items', {
         name,
@@ -18,7 +34,14 @@ const ItemAdd = () => {
         expiration
       })
       .then(response => {
-        console.log(response)
+        console.log(response.data)
+
+        // Reset Form Inputs
+        setName('')
+        setCategory('')
+        setAddedBy('')
+        setExpiration('')
+        // Todo clear category
       })
       .catch(err => {
         console.log(err)
@@ -34,7 +57,7 @@ const ItemAdd = () => {
             <img
               className='responsive-img'
               src='   https://wpcdn.us-east-1.vip.tn-cloud.net/www.sactownmag.com/content/uploads/2020/10/121610343_2690149421252095_9180172192574381574_n.jpg'
-              alt='Colorfully design community fridge'
+              alt='Colorfully designed community fridge'
             />
           </div>
           <div className='col s6'>
@@ -93,6 +116,21 @@ const ItemAdd = () => {
                 </select>
                 <label>Category</label>
               </div>
+              {/* <div className='input-field col s12'>
+                <select
+                  value={selectedLocation}
+                  onChange={event => setSelectedLocation(event.target.value)}
+                >
+                  <option value='' disabled selected>
+                    Choose your option
+                  </option>
+                  {location.Map((location)=>(
+                    <option value={location._id}>{location.name}</option>
+
+                  ))}
+                </select>
+                <label>Choose Location</label>
+              </div> */}
               <button className='waves-effect waves-light btn'>Add Item</button>
             </form>
           </div>
