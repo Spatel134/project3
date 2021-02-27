@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 const Header = (props) => {
   return (
     <nav className="nav-wrapper">
@@ -12,26 +13,14 @@ const Header = (props) => {
           </a>
           <ul class="left hide-on-med-and-down">
             <li>
-              <a href="/">Home</a>
-            </li>
-            {/* <li>
-          <a href="/addItem">Add to Fridge</a>
-        </li> */}
-            {/* <li>
-          <a href="/ownerPage">Owner Page</a>
-        </li> */}
-            <li>
-              <a href="/forms">Forms</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="/locations">View Locations</a>
+              <Link to="/forms">Forms</Link>
             </li>
             <li>
-              <a href="/api/locations/:id">Single Locations</a>
+              <Link to="/locations">View Locations</Link>
             </li>
-            {/* <li>
-          <a href="/social">Contact Us</a>
-        </li> */}
           </ul>
         </div>
       </div>

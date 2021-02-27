@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 const Item = ({ item: { name, category, addedBy, date, expiration } }) => {
 
@@ -7,8 +8,8 @@ const Item = ({ item: { name, category, addedBy, date, expiration } }) => {
             <td>{name}</td>
             <td>{category}</td>
             <td>{addedBy}</td>
-            <td>{date}</td>
-            <td>{expiration}</td>
+            <td>{moment(date).format("MM-DD-YYYY")}</td>
+            <td>{moment(expiration).format("MM-DD-YYYY")}</td>
         </tr>
     )
 }
