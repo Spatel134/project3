@@ -48,7 +48,7 @@ const index = () => {
                 style={{ display: 'table-cell' }}
                 href={data.link}
                 target='_blank'
-                className='btn-floating halfway-fab waves-effect waves-light grey'
+                className='btn-floating halfway-fab waves-effect waves-light red'
               >
                 <i className=' material-icons'>info_outline</i>
               </a>
