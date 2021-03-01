@@ -48,9 +48,9 @@ const index = () => {
                 style={{ display: 'table-cell' }}
                 href={data.link}
                 target='_blank'
-                className='btn-floating halfway-fab waves-effect waves-light red'
+                className='btn-floating halfway-fab waves-effect waves-light grey'
               >
-                <i className='material-icons'>add</i>
+                <i className=' material-icons'>info_outline</i>
               </a>
             </div>
             <div className='card-content'>
