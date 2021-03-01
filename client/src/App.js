@@ -8,12 +8,14 @@ import { useEffect } from "react";
 import ResourceCard from "../src/components/ResourceCard";
 import Resources from "./pages/Resources";
 import Home from "./pages/Home";
-import About from "./pages/Admin";
+import Admin from "./pages/Admin";
 
 function App() {
   useEffect(() => {
     M.AutoInit();
   }, []);
+
+
 
   return (
     <div className="App">
@@ -21,10 +23,10 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/resources" component={Resources} />
-          <Route exact path="/about" component={About} />
-          <Route path="/locations" component={ViewLocations} />
-          <Route path="/api/locations/:id" component={SingleLocation} />
-          <Route path="/forms" component={ItemCreate} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/locations" component={ViewLocations} />
+          <Route exact path="/api/locations/:id" component={SingleLocation} />
+          <Route exact path="/forms" component={ItemCreate} />
         </Switch>
       </Router>
     </div>
