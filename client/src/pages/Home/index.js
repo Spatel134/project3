@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import image from '../../assets/images/community-fridge.jfif'
+import Sidebar from '../../components/Sidebar';
 const Home = () => {
     return (
         <>
-            <Header title="Community Fridge" />
+            <Sidebar title="Community Fridge" />
 
             <div class="section white">
                 <div class="row container">

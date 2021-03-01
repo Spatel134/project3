@@ -3,6 +3,7 @@ import Item from "../../components/Item/Item";
 import axios from 'axios';
 
 import Header from '../../components/Header/Header';
+import Sidebar from '../../components/Sidebar';
 
 const SingleLocation = () => {
     const [location, setLocation] = useState({});
@@ -24,7 +25,7 @@ const SingleLocation = () => {
 
     return (
         <>
-            <Header />
+            <Sidebar title="Community Fridge" />
 
             <div className="container">
                 <div className="row">

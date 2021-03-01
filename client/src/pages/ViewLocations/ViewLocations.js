@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Location from '../../components/Location/Location';
 import axios from "axios";
+import Sidebar from '../../components/Sidebar';
 
 
 const ViewLocations = () => {
@@ -31,7 +32,7 @@ const ViewLocations = () => {
 
     return (
         <>
-            <Header />
+            <Sidebar title="Community Fridge" />
 
             <div className="container">
 
