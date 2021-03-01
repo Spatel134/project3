@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ItemSchema = new Schema({
-  name: { type: String, required: true },
-  category: { type: String, required: true },
-  addedBy: { type: String, required: true },
+  name: { type: String },
+  category: { type: String },
+  addedBy: { type: String },
   date: { type: Date, default: Date.now },
-  expiration: { type: Date, required: true },
+  expiration: { type: Date },
 });
 
 const Item = mongoose.model("Item", ItemSchema);
