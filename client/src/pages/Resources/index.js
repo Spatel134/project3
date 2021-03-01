@@ -1,5 +1,7 @@
 import React from "react";
 import ResourceCard from "../../components/ResourceCard";
+import { Link } from "react-router-dom";
+
 const Resources = () => {
   return (
     <div>
@@ -10,78 +12,125 @@ const Resources = () => {
           <li>
             <div className="user-view">
               <div className="background">
-                <img src="images/office.jpg" />
+                <img src="https://i.imgur.com/OqH4GUk.jpg" />
               </div>
-              <a href="#user">
-                <img className="circle" src="images/yuna.jpg" />
-              </a>
+              <a href="#user"></a>
+              <img className="circle" src="https://www.clipartmax.com/png/middle/269-2691367_user-login-person-man-enter-comments-logo.png" />
               <a href="#name">
-                <span className="white-text name">John Doe</span>
+                <span className=""> </span>
               </a>
               <a href="#email">
-                <span className="white-text email">jdandturk@gmail.com</span>
+                <span className=""></span>
               </a>
             </div>
           </li>
           <li>
-            <a href="#!">
-              <i className="material-icons">cloud</i>First Link With Icon
-            </a>
+            <Link to="/">
+              <a>
+                <i className=" material-icons">home</i> Home
+              </a>
+            </Link>
           </li>
           <li>
-            <a href="#!">Second Link</a>
+            <Link to="/locations">
+              <a>
+                <i className=" material-icons">location_on</i> View Locations
+              </a>
+            </Link>
           </li>
+          <li>
+            <Link to="/resources">
+              <a>
+                <i className=" material-icons">whatshot</i> Resources
+              </a>
+            </Link>
+          </li>
+          <li>
+            {/* 
+      
+      To do: Add a contact page
+      
+    */}
+
+            {/* <Link to="/resources"> */}
+            <a>
+              <i className=" material-icons">phonelink</i> Contact
+            </a>
+            {/* </Link> */}
+          </li>
+
           <li>
             <div className="divider"></div>
           </li>
           <li>
-            <a className="subheader">Subheader</a>
+            <a className="subheader">Authorized Users Only</a>
           </li>
           <li>
-            <a className="waves-effect" href="#!">
-              Third Link With Waves
-            </a>
+            <Link to="/admin">
+              <a>
+                <i className=" material-icons">account_box</i> Admin
+              </a>
+            </Link>
+    <li>
+      <Link to="/forms">
+        <a>
+          <i className=" material-icons">add</i> Add Items
+        </a>
+      </Link>
+    </li>
           </li>
         </ul>
-        <a href="#" data-target="slide-out" className="sidenav-trigger">
-          <i className="material-icons">menu</i>
+        <a href="html#" data-target="slide-out" className="sidenav-trigger">
+          <i className=" grey-text large material-icons">kitchen</i>
         </a>
 
-        <section>
-          {/* <img
-            src="https://www.ediblemanhattan.com/wp-content/uploads/2020/08/walter-wlodarczyk-2020-05-19-_87A9756.jpg"
-            width="100%vw"
-          /> */}
-        </section>
         <div className="container">
           <h2>Resources</h2>
-
+          <hr />
           <p className="flow-text">
-            Whether you are a seasoned Depositer, first time receiver, or just
-            looking for a way to help those in your community, you will find
-            resources that will make implementing a community fridge project in
-            your neighborhood much easier.
+            Whether you are a seasoned user at making deposits, first time
+            receiver of food from the fridge, or are looking for a way to help
+            those in your community, you will find resources that will make
+            implementing a community fridge project in your neighborhood much
+            easier.
           </p>
           <br />
           <iframe
             width="100%vw"
             height="480"
-            src="https://www.youtube.com/embed/o6Yc--wIsPU"
+            src="https://www.youtube.com/embed/y0M4DjVzX_c"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+
+          <br />
           <br />
           <div className="row">
-            <div className="col s4">
+            <div className="col s5">
               <p className="flow-text">
                 All around the world communities are coming together to empower
                 those in need and combat food insecurity with two simple goals:
-                <strong> Reducing food waste and feeding the community.</strong>
+                <strong>
+                  {" "}
+                  Reducing food waste and feeding the community.{" "}
+                </strong>
+                <br />
+                Fill out this form to add your location to this growing network
+                of community fridges.
               </p>
+              <a
+                style={{ display: "table-cell" }}
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf62uCah6cVYDrp0hlMPhCOU07AX6Fq35JP--Ris-CBGheM2w/viewform"
+                target="_blank"
+                class="btn-floating btn-large waves-effect waves-light red"
+              >
+                <i class=" material-icons">group_add</i>
+              </a>
             </div>
-            <div className="col s8">
+            <div className="col s7">
               <iframe
+                title="Freedge Locations around the world"
                 src="https://www.google.com/maps/d/embed?mid=1XHFY6ZwXmWOfuLIxZ84aSyireAy64azl"
                 width="100%vw"
                 height="400"
@@ -89,6 +138,8 @@ const Resources = () => {
             </div>
           </div>
         </div>
+        <br />
+        <br />
         <div className="container">
           <div className="row">
             <ResourceCard />
