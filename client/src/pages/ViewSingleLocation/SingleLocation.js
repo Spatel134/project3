@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Item from "../../components/Item/Item";
 import axios from 'axios';
-import Sidebar from '../../components/Sidebar';
+
+import Header from '../../components/Header/Header';
 
 const SingleLocation = () => {
     const [location, setLocation] = useState({});
@@ -23,7 +24,7 @@ const SingleLocation = () => {
 
     return (
         <>
-            <Sidebar />
+            <Header />
 
             <div className="container">
                 <div className="row">

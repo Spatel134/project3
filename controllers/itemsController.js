@@ -15,8 +15,23 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    db.Item.create(req.body)
-      .then((dbModel) => res.json(dbModel))
+
+    const id = req.body.selectedLocation;
+
+    const item = {
+      name: req.body.name,
+      category: req.body.category,
+      addedBy: req.body.addedBy,
+      expiration: req.body.expiration
+    }
+
+    db.Item.create(item)
+      .then((dbModel) => {
+        db.Location.findOneAndUpdate({ _id: id }, { $push: { items: dbModel._id } }, { new: true })
+          .then(response => console.log(response));
+        res.send("Items has been created and stored in the new location")
+      }
+      )
       .catch((err) => res.status(422).json(err));
   },
   // *************************************  

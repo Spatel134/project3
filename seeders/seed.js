@@ -40,6 +40,15 @@ let locations = [
         items: []
 
     },
+    {
+        name: "Atlanta Fridge",
+        street: "123 Main st",
+        city: "Atlanta",
+        state: "Georgia",
+        zipcode: "11216",
+        items: []
+
+    },
 ];
 
 db.Location.deleteMany({})
