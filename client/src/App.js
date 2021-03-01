@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import SingleLocation from "./pages/ViewSingleLocation/SingleLocation";
 import ViewLocations from "./pages/ViewLocations/ViewLocations";
+import ItemCreate from './components/ItemCreate'
 import M from "materialize-css";
 import { useEffect } from "react";
 
@@ -31,8 +32,10 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/locations" component={ViewLocations} />
           <Route path="/api/locations/:id" component={SingleLocation} />
+          <Route path="/forms" component={ItemCreate} />
         </Switch>
       </Router>
+
 
     </div >
 
