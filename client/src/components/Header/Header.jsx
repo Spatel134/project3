@@ -24,10 +24,10 @@ const Header = (props) => {
               <a href="/forms">Forms</a>
             </li>
             <li>
-              <a href="/view-locations">View Locations</a>
+              <a href="/locations">View Locations</a>
             </li>
             <li>
-              <a href="/single-location">Single Locations</a>
+              <a href="/api/locations/:id">Single Locations</a>
             </li>
             {/* <li>
           <a href="/social">Contact Us</a>

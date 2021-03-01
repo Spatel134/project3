@@ -32,8 +32,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/view-locations" component={ViewLocations} />
-          <Route path="/single-location" component={SingleLocation} />
+          <Route path="/locations" component={ViewLocations} />
+          <Route path="/api/locations/:id" component={SingleLocation} />
         </Switch>
       </Router>
 
