@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react';
 import Header from '../Header/Header'
+import M from "materialize-css";
+
 
 const ItemAdd = () => {
   const [name, setName] = useState('')
@@ -12,6 +14,7 @@ const ItemAdd = () => {
   const [selectedLocation, setSelectedLocation] = useState('')
 
   useEffect(() => {
+    M.AutoInit();
     axios
       .get('api/locations', { responseType: 'json' })
       .then(response => {
@@ -141,7 +144,7 @@ const ItemAdd = () => {
                       </option>
                     ))}
                   </select>
-                  <label>Choose Location</label>
+                  <label className="active">Choose Location</label>
                 </div>
                 <button className='waves-effect waves-light btn'>Add Item</button>
               </form>
