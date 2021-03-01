@@ -48,10 +48,10 @@ const Resources = () => {
         </a>
 
         <section>
-          <img
+          {/* <img
             src="https://www.ediblemanhattan.com/wp-content/uploads/2020/08/walter-wlodarczyk-2020-05-19-_87A9756.jpg"
             width="100%vw"
-          />
+          /> */}
         </section>
         <div className="container">
           <h2>Resources</h2>
