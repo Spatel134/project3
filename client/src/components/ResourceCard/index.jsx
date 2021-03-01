@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const datas = [
   {
     name: 'Community Fridge Slack Channel',
@@ -46,7 +45,9 @@ const index = () => {
               <img src={data.picture} />
               <span className='card-title'></span>
               <a
+                style={{ display: 'table-cell' }}
                 href={data.link}
+                target='_blank'
                 className='btn-floating halfway-fab waves-effect waves-light red'
               >
                 <i className='material-icons'>add</i>
