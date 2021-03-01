@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom"
 import Header from "../Header/Header"
 
 import M from "materialize-css";
@@ -29,7 +29,7 @@ const Sidebar = () => {
       <Header title="Community" />
       <ul className="sidenav" id="mobile-links">
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         {/* <li>
           <a href="/addItem">Add to Fridge</a>
@@ -38,13 +38,13 @@ const Sidebar = () => {
           <a href="/ownerPage">Owner Page</a>
         </li> */}
         <li>
-          <a href="/forms">Forms</a>
+          <Link to="/forms">Forms</Link>
         </li>
         <li>
-          <a href="/view-locations">View Locations</a>
+          <Link to="/locations">View Locations</Link>
         </li>
         <li>
-          <a href="/single-location">Single Locations</a>
+          <Link to="/api/locations/:id">Single Locations</Link>
         </li>
         {/* <li>
           <a href="/social">Contact Us</a>

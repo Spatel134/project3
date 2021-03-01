@@ -11,7 +11,7 @@ const Location = ({ name, id, colSize }) => {
 
                 </div>
                 <div class="card-action">
-                    <Link to={`/single-location/${id}`}>Click here to View</Link>
+                    <Link to={`/api/locations/${id}`}>Click here to View</Link>
                 </div>
             </div>
         </div>
