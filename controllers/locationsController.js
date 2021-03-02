@@ -3,7 +3,7 @@ console.log("Hello!");
 // Defining methods for the locationsController
 module.exports = {
   findAll: function (req, res) {
-
+    console.log(req.query);
     db.Location.find(req.query)
       .sort({ date: -1 })
       .populate("items")
