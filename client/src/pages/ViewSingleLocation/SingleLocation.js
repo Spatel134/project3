@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Item from "../../components/Item/Item";
 import axios from 'axios';
 
-import Header from '../../components/Header/Header';
+import Sidenav from '../../components/Sidenav';
 
 const SingleLocation = () => {
     const [location, setLocation] = useState({});
@@ -24,7 +24,7 @@ const SingleLocation = () => {
 
     return (
         <>
-            <Header />
+            <Sidenav />
 
             <div className="container">
                 <div className="row">

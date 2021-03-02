@@ -1,14 +1,14 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
+import Sidenav from '../../components/Sidenav';
 import image from '../../assets/images/community-fridge.jfif'
 const Home = () => {
     return (
         <>
-            <Header title="Community Fridge" />
+            <Sidenav title="Community Fridge" />
 
             <div class="section white">
                 <div class="row container">
-                    <h2 class="header">What is a community fridge?</h2>
+                    <h2 class="Sidenav">What is a community fridge?</h2>
                     <p class="grey-text text-darken-3 lighten-3">A community fridge is a refrigerator that is placed in a public space to enable food to be shared, at no cost, within a community.</p>
                 </div>
             </div>
