@@ -7,13 +7,11 @@ import ItemForm from "../ItemForm/ItemForm";
 const ItemUpdate = () => {
   const history = useHistory();
   const { id, locationId } = useParams();
-  console.log("update form loaded wiht ID " + id);
   const handleFormSubmit = (event, formObject) => {
     event.preventDefault();
     axios
       .put(`/api/items/${id}`, formObject)
       .then((response) => {
-        console.log(response.data);
         history.push(`/api/locations/${locationId}`);
       })
       .catch((err) => {
