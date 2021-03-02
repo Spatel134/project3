@@ -61,8 +61,8 @@ const About = () => {
             <div className="col s6">
               <img
                 className="responsive-img"
-                src="   https://wpcdn.us-east-1.vip.tn-cloud.net/www.sactownmag.com/content/uploads/2020/10/121610343_2690149421252095_9180172192574381574_n.jpg"
-                alt="Colorfully designed community fridge"
+                src="https://miro.medium.com/max/6522/1*cJPewfkUdrj4K2ywEbnJAQ.jpeg"
+                alt="Man standing by uptown colorfully designed community fridge"
               />
             </div>
             <div className="col s6">
