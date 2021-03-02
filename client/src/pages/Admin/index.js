@@ -1,13 +1,30 @@
 import React from "react";
 import M from "materialize-css";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Sidenav from "../../components/Sidenav";
 // import ItemCreate from "../../components/ItemCreate";
 
 const About = () => {
+  const [name, setName] = useState("");
+  const [street, setStreet] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zipcode, setZipcode] = useState("");
+
   useEffect(() => {
     M.AutoInit();
   }, []);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log("Lfg!");
+    setName("");
+    setStreet("");
+    setCity("");
+    setState("");
+    setZipcode("");
+  };
+
   return (
     <>
       <Sidenav />
@@ -22,13 +39,13 @@ const About = () => {
               />
             </div>
             <div className="col s6">
-              <form className="col s12">
+              <form className="col s12" onSubmit={handleFormSubmit}>
                 <div className="input-field col s12  l12">
                   <input
                     id="name"
                     type="text"
-                    value=""
-                    onChange={(event) => event.target.value}
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
                     className="validate"
                     placeholder="Fox Farm location"
                   />
@@ -39,8 +56,8 @@ const About = () => {
                 <div className="input-field col s12 l12">
                   <input
                     id="street"
-                    value=""
-                    onChange={(event) => event.target.value}
+                    value={street}
+                    onChange={(event) => setStreet(event.target.value)}
                     type="text"
                     className="validate"
                     placeholder="1201 Surf Ave"
@@ -54,8 +71,8 @@ const About = () => {
                   <input
                     id="city"
                     type="text"
-                    value=""
-                    onChange={(event) => event.target.value}
+                    value={city}
+                    onChange={(event) => setCity(event.target.value)}
                     className="validate"
                     placeholder="Brooklyn"
                   />
@@ -66,10 +83,10 @@ const About = () => {
                 </div>
                 <div className="input-field col s4">
                   <input
-                    id="state"
+                    id={state}
                     type="text"
                     value=""
-                    onChange={(event) => event.target.value}
+                    onChange={(event) => setState(event.target.value)}
                     className="validate"
                     placeholder="New York"
                   />
@@ -82,8 +99,8 @@ const About = () => {
                   <input
                     id="zipcode"
                     type="text"
-                    value=""
-                    onChange={(event) => event.target.value}
+                    value={zipcode}
+                    onChange={(event) => setZipcode(event.target.value)}
                     className="validate"
                     placeholder="11224"
                   />
@@ -92,7 +109,9 @@ const About = () => {
                     Zipcode
                   </label>
                 </div>
-                <a className="waves-effect waves-light btn">Add Item</a>
+                <a href="/#" className="waves-effect waves-light btn">
+                  Add Item
+                </a>
               </form>
             </div>
           </div>
