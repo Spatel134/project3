@@ -21,6 +21,7 @@ const Resources = () => {
           </p>
           <br />
           <iframe
+          title="How to start a community fridge"
             width="100%vw"
             height="480"
             src="https://www.youtube.com/embed/y0M4DjVzX_c"
@@ -48,6 +49,7 @@ const Resources = () => {
                 style={{ display: "table-cell" }}
                 href="https://docs.google.com/forms/d/e/1FAIpQLSf62uCah6cVYDrp0hlMPhCOU07AX6Fq35JP--Ris-CBGheM2w/viewform"
                 target="_blank"
+                rel="noreferrer"
                 class="btn-floating btn-large waves-effect waves-light red"
               >
                 <i class=" material-icons">group_add</i>
