@@ -1,56 +1,31 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Location = ({
-  name,
-  id,
-  colSize,
-  image,
-  city,
-  street,
-  zipcode,
-  state
-}) => {
-  console.log(image)
+const Location = ({ name, id, image, city, street, zipcode, state }) => {
   return (
-    // <div className={`col s${colSize}`}>
-    //   <div className='card'>
-    //     <div className='card-content' style={{ color: '#ee6e73' }}>
-    //       <span className='card-title'>{name}</span>
-    //     </div>
-    //     <div className='card-action'>
-    //       <Link to={`/api/locations/${id}`} style={{ color: '#ee6e73' }}>
-    //         Click here to View
-    //       </Link>
+    <div className='col s4 m4'>
+      <div className='card'>
+        <div className='card-image'>
+          <img alt={name} src={image} />
 
-    //     </div>
-    //   </div>
-    // </div>
-
-    <div className='card'>
-      <div className='card-image waves-effect waves-block waves-light'>
-        <img className='activator' src={image} />
-      </div>
-      <div className='card-content'>
-        <span className='card-title activator grey-text text-darken-4'>
-          {name} <i className='material-icons right'>more_vert</i>
-        </span>
-        <Link to={`/api/locations/${id}`} style={{ color: '#ee6e73' }}>
-          <p>
-            Click here to items at this location
-     
-          </p>
-        </Link>
-      </div>
-      <div className='card-reveal'>
-        <span className='card-title grey-text text-darken-4'>
-          {name}
-          <i className='material-icons right'>close</i>
-        </span>
-        <p>{street}</p>
-        <p>{city}</p>
-        <p>{state}</p>
-        <p>{zipcode}</p>
+          <span className='card-title'></span>
+          <Link to={`/api/locations/${id}`}>
+            <a
+              href='/#'
+              className='btn-floating halfway-fab waves-effect waves-light red'
+            >
+              <i className='material-icons'>location_on</i>
+          </a>
+            </Link>
+        </div>
+        <div className='card-content'>
+          <strong>{name}</strong>
+          <hr />
+          <p>{street}</p>
+          <p>{city}</p>
+          <p>{state}</p>
+          <p>{zipcode}</p>
+        </div>
       </div>
     </div>
   )
