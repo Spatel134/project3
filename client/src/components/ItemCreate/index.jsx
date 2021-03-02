@@ -1,9 +1,8 @@
 import React from 'react'
 import axios from 'axios'
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import Sidenav from '../Sidenav'
-import M from "materialize-css";
-
+import M from 'materialize-css'
 
 const ItemAdd = () => {
   const [name, setName] = useState('')
@@ -14,7 +13,7 @@ const ItemAdd = () => {
   const [selectedLocation, setSelectedLocation] = useState('')
 
   useEffect(() => {
-    M.AutoInit();
+    M.AutoInit()
     axios
       .get('api/locations', { responseType: 'json' })
       .then(response => {
@@ -81,8 +80,8 @@ const ItemAdd = () => {
                   />
                   <label className='active' htmlFor='name'>
                     {' '}
-                  Item Name
-                </label>
+                    Item Name
+                  </label>
                 </div>
                 <div className='input-field col s12 l12'>
                   <input
@@ -95,7 +94,7 @@ const ItemAdd = () => {
                   />
                   <label htmlFor='addedBy' className='active'>
                     Added by
-                </label>
+                  </label>
                 </div>
                 <div className='input-field col s12'>
                   <input
@@ -107,7 +106,7 @@ const ItemAdd = () => {
                   />
                   <label className='active' htmlFor='expiration'>
                     Expiration Date
-                </label>
+                  </label>
                 </div>
                 <div className='input-field col s12'>
                   <select
@@ -116,7 +115,7 @@ const ItemAdd = () => {
                   >
                     <option value='' disabled defaultValue>
                       Choose your option
-                  </option>
+                    </option>
                     <option value='Frozen'>Frozen</option>
                     <option value='Produce'>Produce</option>
                     <option value='Pantry'>Pantry</option>
@@ -126,7 +125,7 @@ const ItemAdd = () => {
                 </div>
                 <div className='input-field col s12'>
                   <select
-                    className="browser-default"
+                    className='browser-default'
                     onChange={event => setSelectedLocation(event.target.value)}
                   >
                     {/* 
@@ -137,16 +136,18 @@ const ItemAdd = () => {
                   */}
                     <option value='' disabled defaultValue>
                       Choose your option
-                  </option>
+                    </option>
                     {locations.map(location => (
                       <option key={location._id} value={location._id}>
                         {location.name}
                       </option>
                     ))}
                   </select>
-                  <label className="active">Choose Location</label>
+                  <label className='active'>Choose Location</label>
                 </div>
-                <button className='waves-effect waves-light btn'>Add Item</button>
+                <button className='waves-effect waves-light btn'>
+                  Add Item
+                </button>
               </form>
             </div>
           </div>
