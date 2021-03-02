@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../components/Header/Header';
+import Sidenav from '../../components/Sidenav';
 import Location from '../../components/Location/Location';
 import axios from "axios";
+
 
 
 const ViewLocations = () => {
@@ -31,7 +32,7 @@ const ViewLocations = () => {
 
     return (
         <>
-            <Header />
+            <Sidenav />
 
             <div className="container">
 

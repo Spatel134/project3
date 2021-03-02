@@ -1,8 +1,10 @@
-import React from "react";
-import axios from "axios";
-import Header from "../Header/Header";
 import { useHistory } from "react-router-dom";
 import ItemForm from "../ItemForm/ItemForm";
+import React from 'react'
+import axios from 'axios'
+import { useState, useEffect } from 'react';
+import Sidenav from '../Sidenav'
+import M from "materialize-css";
 
 const ItemAdd = () => {
   const history = useHistory();
@@ -23,7 +25,7 @@ const ItemAdd = () => {
 
   return (
     <>
-      <Header />
+      <Sidenav />
       <div>
         <div className="container">
           <nav className="transparent waves-effect waves-cyan"> </nav>
