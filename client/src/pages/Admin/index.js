@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import M from "materialize-css";
 import { useState, useEffect } from "react";
 import Sidenav from "../../components/Sidenav";
@@ -8,7 +9,7 @@ const About = () => {
   const [name, setName] = useState("");
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
-  const [state, setState] = useState("");
+  const [state, setStates] = useState("");
   const [zipcode, setZipcode] = useState("");
 
   useEffect(() => {
@@ -17,12 +18,35 @@ const About = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("Lfg!");
-    setName("");
-    setStreet("");
-    setCity("");
-    setState("");
-    setZipcode("");
+    // !name ||
+    // !street ||
+    // !city ||
+    // !state ||
+    // zipcode.length > 5 ||
+    // zipcode.length < 5
+    //   ? alert("Please enter a valid address")
+    //   :
+    axios
+      .post("/api/locations", {
+        name,
+        street,
+        city,
+        state,
+        zipcode,
+      })
+      .then((response) => {
+        console.log(response.data);
+
+        setName("");
+        setStreet("");
+        setCity("");
+        setStates("");
+        setZipcode("");
+        alert("Your location has been added");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -83,10 +107,10 @@ const About = () => {
                 </div>
                 <div className="input-field col s4">
                   <input
-                    id={state}
+                    id="state"
                     type="text"
-                    value=""
-                    onChange={(event) => setState(event.target.value)}
+                    value={state}
+                    onChange={(event) => setStates(event.target.value)}
                     className="validate"
                     placeholder="New York"
                   />
@@ -109,9 +133,9 @@ const About = () => {
                     Zipcode
                   </label>
                 </div>
-                <a href="/#" className="waves-effect waves-light btn">
+                <button className="waves-effect waves-light btn">
                   Add Item
-                </a>
+                </button>
               </form>
             </div>
           </div>
