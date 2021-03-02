@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import image from '../../assets/images/community-fridge.jfif'
+import image from '../../assets/images/community-fridge.jfif';
+import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <>
@@ -15,8 +16,9 @@ const Home = () => {
             <div class="parallax-container">
                 <div class="parallax"><img src={image} />
                 </div>
-                <div style={{ position: "absolute", top: "30%", left: "30%" }}>
-                    <a class="waves-effect waves-light btn">button</a>
+                <div style={{ position: "absolute", top: "30%", left: "20%" }}>
+                    <h1 style={{ color: "white" }}>Click Here to View The Location of The Fridges</h1>
+                    <Link to="/locations" class="waves-effect waves-dark btn-large">View Fridges</Link>
                 </div>
             </div>
 
