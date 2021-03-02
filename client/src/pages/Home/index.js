@@ -1,12 +1,8 @@
 import React from 'react';
-<<<<<<< HEAD
-import Header from '../../components/Header/Header';
 import image from '../../assets/images/community-fridge.jfif';
 import { Link } from 'react-router-dom';
-=======
 import Sidenav from '../../components/Sidenav';
 import image from '../../assets/images/community-fridge.jfif'
->>>>>>> 3332fb2ea90ba3c9b06e3680e6db6441b3b95ec0
 const Home = () => {
     return (
         <>
