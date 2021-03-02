@@ -21,7 +21,6 @@ const Sidenav = () => {
               />
             </div>
 
-    
             <img
               alt='gender neutral user avatar'
               className='circle'
@@ -38,21 +37,23 @@ const Sidenav = () => {
         <li>
           <Link to='/'>
             <a href='/#'>
-              <i className=' material-icons'>home</i> Home
+              <i className=' sidenav-close material-icons'>home</i> Home
             </a>
           </Link>
         </li>
         <li>
           <Link to='/locations'>
             <a href='/#'>
-              <i className=' material-icons'>location_on</i> View Locations
+              <i className=' sidenav-close material-icons'>location_on</i> View
+              Locations
             </a>
           </Link>
         </li>
         <li>
           <Link to='/resources'>
             <a href='/#'>
-              <i className=' material-icons'>whatshot</i> Resources
+              <i className=' sidenav-close material-icons'>whatshot</i>{' '}
+              Resources
             </a>
           </Link>
         </li>
@@ -65,7 +66,7 @@ To do: Add a contact page
 
           {/* <Link to="/resources"> */}
           <a href='/#'>
-            <i className=' material-icons'>phonelink</i> Contact
+            <i className=' sidenav-close material-icons'>phonelink</i> Contact
           </a>
           {/* </Link> */}
         </li>
@@ -81,13 +82,13 @@ To do: Add a contact page
         <li>
           <Link to='/admin'>
             <a href='/#'>
-              <i className=' material-icons'>account_box</i> Admin
+              <i className=' sidenav-close material-icons'>account_box</i> Admin
             </a>
           </Link>
           <li>
             <Link to='/forms'>
               <a href='/#'>
-                <i className=' material-icons'>add</i> Add Items
+                <i className='  sidenav-close material-icons'>add</i> Add Items
               </a>
             </Link>
           </li>
