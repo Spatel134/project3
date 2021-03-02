@@ -39,7 +39,7 @@ const index = () => {
   return (
     <>
       {datas.map(data => (
-        <div className='col s4'>
+        <div className='col m4 s4'>
           <div className='card'>
             <div className='card-image'>
               <img alt="Relevant resource for starting a community fridge" src={data.picture} />
