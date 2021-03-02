@@ -15,20 +15,23 @@ const Sidenav = () => {
         <li>
           <div className='user-view'>
             <div className='background'>
-              <img src='https://i.imgur.com/OqH4GUk.jpg' />
+              <img alt="gradient header background"src='https://i.imgur.com/OqH4GUk.jpg' />
             </div>
 
             {/* 
       
       Add user picture to sidebar nav
       */}
-            <a href='#user'></a>
+            <a href='/#'>
+              
+            </a>
             <img
+            alt="gender neutral user avatar"
               className='circle'
               src='https://www.clipartmax.com/png/middle/269-2691367_user-login-person-man-enter-comments-logo.png'
             />
             <a href='#name'>
-              <span className=''> </span>
+              <span className=''></span>
             </a>
             <a href='#email'>
               <span className=''></span>
@@ -37,21 +40,21 @@ const Sidenav = () => {
         </li>
         <li>
           <Link to='/'>
-            <a>
+            <a href="/#">
               <i className=' material-icons'>home</i> Home
             </a>
           </Link>
         </li>
         <li>
           <Link to='/locations'>
-            <a>
+            <a href="/#">
               <i className=' material-icons'>location_on</i> View Locations
             </a>
           </Link>
         </li>
         <li>
           <Link to='/resources'>
-            <a>
+            <a href="/#">
               <i className=' material-icons'>whatshot</i> Resources
             </a>
           </Link>
@@ -64,7 +67,7 @@ To do: Add a contact page
 */}
 
           {/* <Link to="/resources"> */}
-          <a>
+          <a href="/#">
             <i className=' material-icons'>phonelink</i> Contact
           </a>
           {/* </Link> */}
@@ -74,17 +77,17 @@ To do: Add a contact page
           <div className='divider'></div>
         </li>
         <li>
-          <a className='subheader'>Authorized Users Only</a>
+          <a href="/#" className='subheader'>Authorized Users Only</a>
         </li>
         <li>
           <Link to='/admin'>
-            <a>
+            <a href="/#">
               <i className=' material-icons'>account_box</i> Admin
             </a>
           </Link>
           <li>
             <Link to='/forms'>
-              <a>
+              <a href="/#">
                 <i className=' material-icons'>add</i> Add Items
               </a>
             </Link>
