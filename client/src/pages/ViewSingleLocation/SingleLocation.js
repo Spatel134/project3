@@ -54,19 +54,15 @@ const SingleLocation = () => {
                             </thead>
 
                             <tbody>
-<<<<<<< HEAD
 
-=======
-                                {console.log(items)}
->>>>>>> itemForm
-                            {items.map((item) => (
-                                <Item item={item} locationId={location._id} />
-                            ))}
+                                {items.map((item) => (
+                                    <Item item={item} locationId={location._id} />
+                                ))}
                             </tbody>
                         </table>
+                    </div>
                 </div>
             </div>
-        </div>
         </>
     );
 }

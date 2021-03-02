@@ -1,6 +1,7 @@
 
 const db = require("../models");
 const bcrypt = require('bcrypt');
+const jwt = require("jsonwebtoken")
 module.exports = {
     createdNewUser: function (req, res) {
         console.log(req.body)
@@ -8,10 +9,34 @@ module.exports = {
             email: req.body.email,
         }
         bcrypt.hash(req.body.password, 8, (err, hashedPassword) => {
-            console.log(req.body.password)
+
             if (err) throw new Error(err);
-            console.log(hashedPassword)
+            userToCreate.password = hashedPassword;
+            db.User.create(userToCreate).then((newUser) => {
+                const token = jwt.sign({ _id: newUser._id }, "secret");
+                res.json({ token: token })
+            }).catch(err => {
+                console.log(err);
+                res.status(500).end();
+            })
         })
     },
-    loginUser: function (req, res) { }
+    loginUser: function (req, res) {
+
+        db.User.findOne({ email: req.body.email }).then(foundUser => {
+            bcrypt.compare(req.body.password, foundUser.password, (err, result) => {
+
+                if (result) {
+                    const token = jwt.sign({ _id: foundUser._id }, "secret");
+                    res.json({ token: token })
+                } else {
+
+                    res.status(401).end();
+                }
+            })
+        }).catch(err => {
+            console.log(err)
+            res.status(500).end();
+        })
+    }
 }
