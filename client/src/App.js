@@ -7,6 +7,7 @@ import {
 import SingleLocation from "./pages/ViewSingleLocation/SingleLocation";
 import ViewLocations from "./pages/ViewLocations/ViewLocations";
 import ItemCreate from './components/ItemCreate'
+import ItemUpdate from './components/ItemUpdate'
 import M from "materialize-css";
 import { useEffect } from "react";
 
@@ -32,7 +33,8 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/locations" component={ViewLocations} />
           <Route path="/api/locations/:id" component={SingleLocation} />
-          <Route path="/forms" component={ItemCreate} />
+          <Route path="/items" component={ItemCreate} />
+          <Route exact path="/items/:id/edit" component={ItemUpdate} />
         </Switch>
       </Router>
 
