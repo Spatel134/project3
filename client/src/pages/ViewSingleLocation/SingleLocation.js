@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Item from "../../components/Item/Item";
-import axios from 'axios';
-import { useParams } from "react-router"
-import Sidenav from '../../components/Sidenav';
+import axios from "axios";
+import { useParams } from "react-router";
+import Sidenav from "../../components/Sidenav";
 
 const SingleLocation = () => {
     const [location, setLocation] = useState({});
     const [items, setItems] = useState([]);
     const { id } = useParams();
-
     useEffect(() => {
         loadItems();
     }, []);
 
     const loadItems = () => {
-
-        axios.get("/api/locations/" + id).then(({ data: { items, ...locationInfo } }) => {
-            console.log(items);
-            console.log(locationInfo)
-            setLocation(locationInfo);
-            setItems(items);
-        });
-    }
-
+        // const id = window.location.pathname.split("/");
+        axios
+            .get("/api/locations/" + id)
+            .then(({ data: { items, ...locationInfo } }) => {
+                setLocation(locationInfo);
+                setItems(items);
+            });
+    };
 
     return (
         <>
@@ -54,8 +52,7 @@ const SingleLocation = () => {
                             </thead>
 
                             <tbody>
-
-                                {items.map((item) => (
+                                {console.log(items)} {items.map((item) => (
                                     <Item item={item} locationId={location._id} />
                                 ))}
                             </tbody>
@@ -65,5 +62,5 @@ const SingleLocation = () => {
             </div>
         </>
     );
-}
+};
 export default SingleLocation;

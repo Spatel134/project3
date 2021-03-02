@@ -1,10 +1,11 @@
-import React from 'react';
-import moment from 'moment';
+import React from "react";
+import moment from "moment";
 import { Link } from "react-router-dom";
 
-
-const Item = ({ locationId, item: { _id, name, category, addedBy, date, expiration } }) => {
-
+const Item = ({
+  locationId,
+  item: { _id, name, category, addedBy, date, expiration },
+}) => {
   return (
     <tr>
       <td>{name}</td>
@@ -12,13 +13,15 @@ const Item = ({ locationId, item: { _id, name, category, addedBy, date, expirati
       <td>{addedBy}</td>
       <td>{moment(date).format("MM-DD-YYYY")}</td>
       <td>{moment(expiration).format("MM-DD-YYYY")}</td>
-      <td><Link
-        to={`/api/${locationId}/items/${_id}/edit`}
-        className="waves-effect waves-light btn"
-      >
-        Edit
-            </Link></td>
+      <td>
+        <Link
+          to={`/api/${locationId}/items/${_id}/edit`}
+          className="waves-effect waves-light btn"
+        >
+          Edit
+        </Link>
+      </td>
     </tr>
-  )
-}
+  );
+};
 export default Item;

@@ -11,18 +11,15 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    console.log(req.params.id)
+    console.log(req.params.id);
     db.Location.findOne({ _id: req.params.id })
-
       .populate("items")
-      .then(info => {
-        console.log(info);
+      .then((info) => {
         res.json(info);
-      }).catch(err => {
-        console.log(err)
       })
-
-
+      .catch((err) => {
+        console.log(err);
+      });
   },
   create: function (req, res) {
     db.Location.create(req.body)

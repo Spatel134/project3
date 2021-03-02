@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
-import Sidenav from '../Sidenav'
+import Sidenav from "../Sidenav";
 import ItemForm from "../ItemForm/ItemForm";
 
 const ItemUpdate = () => {
@@ -14,8 +14,6 @@ const ItemUpdate = () => {
       .put(`/api/items/${id}`, formObject)
       .then((response) => {
         console.log(response.data);
-
-
         history.push(`/api/locations/${locationId}`);
       })
       .catch((err) => {
