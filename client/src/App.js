@@ -5,7 +5,6 @@ import ViewLocations from "./pages/ViewLocations/ViewLocations";
 import ItemCreate from "./components/ItemCreate";
 import M from "materialize-css";
 import { useEffect } from "react";
-import ResourceCard from "../src/components/ResourceCard";
 import Resources from "./pages/Resources";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
