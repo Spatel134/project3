@@ -12,8 +12,10 @@ module.exports = {
   },
   findById: function (req, res) {
     db.Location.findOne({ _id: req.params.id })
-      .populate("items")
+      
+    .populate("items")
       .then(info => {
+          console.log(info);
         res.json(info);
       }).catch(err => {
         console.log(err)

@@ -1,47 +1,52 @@
-import React from 'react';
+import React from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
+import Sidenav from '../Sidenav'
 import ItemForm from "../ItemForm/ItemForm";
 
 const ItemUpdate = () => {
-    const history = useHistory();
-    const { id } = useParams();
+  const history = useHistory();
+  const { id } = useParams();
+  console.log("update form loaded wiht ID " + id);
+  const handleFormSubmit = (event, formObject) => {
+    event.preventDefault();
+    axios
+      .put(`/api/items/${id}`, formObject)
+      .then((response) => {
+        console.log(response.data);
 
-    const handleFormSubmit = (event, formObject) => {
-        event.preventDefault();
-        axios
-          .post(`/api/items/${id}`, formObject)
-          .then((response) => {
-            console.log(response.data);
-    
-            history.push(`/items/${response.data._id}`);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      };
+        history.push(`/api/locations/${response.data._id}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
-    <div>
-      <div className='container'>
-        <nav className='transparent waves-effect waves-cyan'> </nav>
-        <div className='row'>
-          <div className='col s6'>
-            <img
-              className='responsive-img'
-              src='https://www.keynshamvoice.co.uk/images/news/FEB%202020/Example-of-an-existing-community-fridge.gif'
-            />
-          </div>
-          <div className='col s6'>
-          <ItemForm
+    <>
+      <Sidenav />
+      <div>
+        <div className="container">
+          <nav className="transparent waves-effect waves-cyan"> </nav>
+          <div className="row">
+            <div className="col s6">
+              <img
+                className="responsive-img"
+                src="   https://wpcdn.us-east-1.vip.tn-cloud.net/www.sactownmag.com/content/uploads/2020/10/121610343_2690149421252095_9180172192574381574_n.jpg"
+                alt="Colorfully designed community fridge"
+              />
+            </div>
+            <div className="col s6">
+              <ItemForm
                 handleFormSubmit={handleFormSubmit}
                 buttonText="Update Item"
               />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )
-}
+    </>
+  );
+};
 
 export default ItemUpdate;

@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/locations" component={ViewLocations} />
           <Route exact path="/api/locations/:id" component={SingleLocation} />
           <Route exact path="/items" component={ItemCreate} />
-          <Route exact path="/items/:id/edit" component={ItemUpdate} />
+          <Route exact path="/api/locations/items/:id/edit" component={ItemUpdate} />
         </Switch>
       </Router>
     </div>

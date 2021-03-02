@@ -14,7 +14,7 @@ const SingleLocation = () => {
 
     const loadItems = () => {
         const id = window.location.pathname.split("/");
-
+console.log(items);
         axios.get("/api/locations/" + id[3]).then(({ data: { items, ...locationInfo } }) => {
             setLocation(locationInfo);
             setItems(items)
@@ -52,6 +52,7 @@ const SingleLocation = () => {
                             </thead>
 
                             <tbody>
+                                {console.log(items)}
                                 {items.map((item) => (
                                     <Item item={item} />
                                 ))}

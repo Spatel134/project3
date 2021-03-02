@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import M from "materialize-css";
 import { useParams } from "react-router-dom";
+import moment from 'moment';
 
 const ItemForm = (props) => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const ItemForm = (props) => {
     M.AutoInit();
     setLocations([]);
     axios
-      .get("api/locations", { responseType: "json" })
+      .get("/api/locations", { responseType: "json" })
       .then((response) => {
         console.log(response.data);
         if (response.data) {
@@ -35,10 +36,10 @@ const ItemForm = (props) => {
         .then((response) => {
           console.log(response.data);
           setName(response.data.name);
-          setCategory(response.data.category);
           setAddedBy(response.data.addedBy);
-          setExpiration(response.data.expiration);
+          setExpiration(moment(response.data.expiration).format("YYYY-MM-DD"));
           setSelectedLocation(response.data.location);
+          setCategory(response.data.category);
         })
         .catch((err) => {
           console.log(err);
@@ -113,10 +114,10 @@ const ItemForm = (props) => {
           <option value="" disabled defaultValue>
             Choose your option
           </option>
-          <option value="Frozen">Frozen</option>
-          <option value="Produce">Produce</option>
-          <option value="Pantry">Pantry</option>
-          <option value="Personal Care">Personal Care</option>
+          <option key="Frozen" value="Frozen">Frozen</option>
+          <option key="Produce" value="Produce">Produce</option>
+          <option key="Pantry" value="Pantry">Pantry</option>
+          <option key="Personal Care" value="Personal Care">Personal Care</option>
         </select>
         <label>Category</label>
       </div>

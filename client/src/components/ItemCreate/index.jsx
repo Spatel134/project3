@@ -8,6 +8,7 @@ import M from "materialize-css";
 
 const ItemAdd = () => {
   const history = useHistory();
+  console.log("Add form loaded")
 
   const handleFormSubmit = (event, formObject) => {
     event.preventDefault();
