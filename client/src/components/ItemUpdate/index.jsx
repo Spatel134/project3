@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
-import Sidenav from '../Sidenav'
+import Sidenav from "../Sidenav";
 import ItemForm from "../ItemForm/ItemForm";
 
 const ItemUpdate = () => {
