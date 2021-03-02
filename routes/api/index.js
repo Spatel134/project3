@@ -5,7 +5,7 @@ const itemRoutes = require("./items");
 
 router.use("/items", itemRoutes);
 router.use("/locations", locationRoutes);
-// router.use("/auth", authentication);
+//router.use("/authentication", authentication);
 
 
 module.exports = router;
