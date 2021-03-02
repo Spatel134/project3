@@ -17,36 +17,39 @@ const About = () => {
   }, []);
 
   const handleFormSubmit = (event) => {
-    event.preventDefault();
-    // !name ||
-    // !street ||
-    // !city ||
-    // !state ||
-    // zipcode.length > 5 ||
-    // zipcode.length < 5
-    //   ? alert("Please enter a valid address")
-    //   :
-    axios
-      .post("/api/locations", {
-        name,
-        street,
-        city,
-        state,
-        zipcode,
-      })
-      .then((response) => {
-        console.log(response.data);
+// Todo: Fix regex validation to not accept numbers
 
-        setName("");
-        setStreet("");
-        setCity("");
-        setStates("");
-        setZipcode("");
-        alert("Your location has been added");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // let isnum = /^\d+$/.test(event);
+    event.preventDefault();
+    !name ||
+    !street ||
+    !city ||
+    !state ||
+    zipcode.length > 5 ||
+    zipcode.length < 5 
+    // zipcode !== isnum
+      ? alert("Please enter a valid address")
+      : axios
+          .post("/api/locations", {
+            name,
+            street,
+            city,
+            state,
+            zipcode,
+          })
+          .then((response) => {
+            console.log(response.data);
+
+            setName("");
+            setStreet("");
+            setCity("");
+            setStates("");
+            setZipcode("");
+            alert("Your location has been added");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
   };
 
   return (
