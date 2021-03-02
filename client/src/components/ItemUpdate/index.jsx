@@ -6,7 +6,7 @@ import ItemForm from "../ItemForm/ItemForm";
 
 const ItemUpdate = () => {
   const history = useHistory();
-  const { id } = useParams();
+  const { id, locationId } = useParams();
   console.log("update form loaded wiht ID " + id);
   const handleFormSubmit = (event, formObject) => {
     event.preventDefault();
@@ -15,7 +15,8 @@ const ItemUpdate = () => {
       .then((response) => {
         console.log(response.data);
 
-        history.push(`/api/locations/${response.data._id}`);
+
+        history.push(`/api/locations/${locationId}`);
       })
       .catch((err) => {
         console.log(err);
