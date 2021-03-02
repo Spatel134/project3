@@ -2,7 +2,7 @@ import React from 'react';
 import image from '../../assets/images/community-fridge.jfif';
 import { Link } from 'react-router-dom';
 import Sidenav from '../../components/Sidenav';
-import image from '../../assets/images/community-fridge.jfif'
+
 const Home = () => {
     return (
         <>
