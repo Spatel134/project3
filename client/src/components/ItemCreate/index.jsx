@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react';
-import Header from '../Header/Header'
+import Sidenav from '../Sidenav'
 import M from "materialize-css";
 
 
@@ -56,7 +56,7 @@ const ItemAdd = () => {
 
   return (
     <>
-      <Header />
+      <Sidenav />
       <div>
         <div className='container'>
           <nav className='transparent waves-effect waves-cyan'> </nav>
