@@ -11,6 +11,7 @@ const About = () => {
   const [city, setCity] = useState("");
   const [state, setStates] = useState("");
   const [zipcode, setZipcode] = useState("");
+  const [image, setImage] = useState("");
 
   useEffect(() => {
     M.AutoInit();
@@ -18,6 +19,7 @@ const About = () => {
 
   const handleFormSubmit = (event) => {
 // Todo: Fix regex validation to not accept numbers
+//  get ride of alerts for toasts
 
     // let isnum = /^\d+$/.test(event);
     event.preventDefault();
@@ -25,10 +27,11 @@ const About = () => {
     !street ||
     !city ||
     !state ||
+    !image ||
     zipcode.length > 5 ||
     zipcode.length < 5 
     // zipcode !== isnum
-      ? alert("Please enter a valid address")
+      ? alert("Please complete all fields")
       : axios
           .post("/api/locations", {
             name,
@@ -36,6 +39,7 @@ const About = () => {
             city,
             state,
             zipcode,
+            image,
           })
           .then((response) => {
             console.log(response.data);
@@ -122,7 +126,7 @@ const About = () => {
                     State
                   </label>
                 </div>
-                <div className="input-field col s8">
+                <div className="input-field col s10">
                   <input
                     id="zipcode"
                     type="text"
@@ -136,6 +140,20 @@ const About = () => {
                     Zipcode
                   </label>
                 </div>
+                <div className="input-field col s12 l12">
+                  <input
+                    id="image"
+                    value={image}
+                    onChange={(event) => setImage(event.target.value)}
+                    type="text"
+                    className="validate"
+                    placeholder="https://picsum.photos/536/354"
+                  />
+                  <label htmlFor="addedBy" className="active">
+                    Image Link
+                  </label>
+                </div>
+
                 <button className="waves-effect waves-light btn">
                   Add Item
                 </button>
