@@ -3,7 +3,7 @@ console.log("Hello!");
 // Defining methods for the locationsController
 module.exports = {
   findAll: function (req, res) {
-
+    console.log(req.query);
     db.Location.find(req.query)
       .sort({ date: -1 })
       .populate("items")
@@ -11,9 +11,12 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
+    console.log(req.params.id)
     db.Location.findOne({ _id: req.params.id })
+
       .populate("items")
       .then(info => {
+        console.log(info);
         res.json(info);
       }).catch(err => {
         console.log(err)
