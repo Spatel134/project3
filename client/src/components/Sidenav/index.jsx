@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import M from 'materialize-css'
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 const Sidenav = () => {
   useEffect(() => {
@@ -15,18 +15,15 @@ const Sidenav = () => {
         <li>
           <div className='user-view'>
             <div className='background'>
-              <img alt="gradient header background"src='https://i.imgur.com/OqH4GUk.jpg' />
+              <img
+                alt='gradient header background'
+                src='https://i.imgur.com/OqH4GUk.jpg'
+              />
             </div>
 
-            {/* 
-      
-      Add user picture to sidebar nav
-      */}
-            <a href='/#'>
-              
-            </a>
+    
             <img
-            alt="gender neutral user avatar"
+              alt='gender neutral user avatar'
               className='circle'
               src='https://www.clipartmax.com/png/middle/269-2691367_user-login-person-man-enter-comments-logo.png'
             />
@@ -40,21 +37,21 @@ const Sidenav = () => {
         </li>
         <li>
           <Link to='/'>
-            <a href="/#">
+            <a href='/#'>
               <i className=' material-icons'>home</i> Home
             </a>
           </Link>
         </li>
         <li>
           <Link to='/locations'>
-            <a href="/#">
+            <a href='/#'>
               <i className=' material-icons'>location_on</i> View Locations
             </a>
           </Link>
         </li>
         <li>
           <Link to='/resources'>
-            <a href="/#">
+            <a href='/#'>
               <i className=' material-icons'>whatshot</i> Resources
             </a>
           </Link>
@@ -67,7 +64,7 @@ To do: Add a contact page
 */}
 
           {/* <Link to="/resources"> */}
-          <a href="/#">
+          <a href='/#'>
             <i className=' material-icons'>phonelink</i> Contact
           </a>
           {/* </Link> */}
@@ -77,17 +74,19 @@ To do: Add a contact page
           <div className='divider'></div>
         </li>
         <li>
-          <a href="/#" className='subheader'>Authorized Users Only</a>
+          <a href='/#' className='subheader'>
+            Authorized Users Only
+          </a>
         </li>
         <li>
           <Link to='/admin'>
-            <a href="/#">
+            <a href='/#'>
               <i className=' material-icons'>account_box</i> Admin
             </a>
           </Link>
           <li>
             <Link to='/forms'>
-              <a href="/#">
+              <a href='/#'>
                 <i className=' material-icons'>add</i> Add Items
               </a>
             </Link>
