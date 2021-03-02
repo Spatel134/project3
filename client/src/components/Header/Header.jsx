@@ -16,7 +16,7 @@ const Header = (props) => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/forms">Forms</Link>
+              <Link to="/items">Forms</Link>
             </li>
             <li>
               <Link to="/locations">View Locations</Link>
