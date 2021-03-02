@@ -8,6 +8,7 @@ const LocationSchema = new Schema({
   city: { type: String, required: true },
   state: { type: String, required: true },
   zipcode: { type: Number, required: true },
+  image: { type: String, required: true },
   items: [{ type: Schema.Types.ObjectId, ref: "Item" }],
 });
 
