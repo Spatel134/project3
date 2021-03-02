@@ -13,7 +13,6 @@ const Item = ({
         axios
           .delete(`/api/items/${id}`)
           .then((response) => {
-            console.log(response.data);
             history.go(0);
           })
           .catch((err) => {
