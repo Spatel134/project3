@@ -12,16 +12,13 @@ module.exports = {
   },
   findById: function (req, res) {
     db.Location.findOne({ _id: req.params.id })
-      
-    .populate("items")
-      .then(info => {
-          console.log(info);
+      .populate("items")
+      .then((info) => {
         res.json(info);
-      }).catch(err => {
-        console.log(err)
       })
-
-
+      .catch((err) => {
+        console.log(err);
+      });
   },
   create: function (req, res) {
     db.Location.create(req.body)
