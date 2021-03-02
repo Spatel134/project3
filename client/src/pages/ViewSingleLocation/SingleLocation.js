@@ -52,7 +52,6 @@ const SingleLocation = () => {
               </thead>
 
               <tbody>
-                {console.log(items)}
                 {items.map((item) => (
                   <Item item={item} locationId={location._id} />
                 ))}
