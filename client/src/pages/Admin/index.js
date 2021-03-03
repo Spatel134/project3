@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import M from "materialize-css";
 import { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+
 import Sidenav from "../../components/Sidenav";
 // import ItemCreate from "../../components/ItemCreate";
 
@@ -12,15 +14,23 @@ const About = () => {
   const [state, setStates] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [image, setImage] = useState("");
+  const [locations, setLocations] = useState([]);
 
   useEffect(() => {
     M.AutoInit();
+
+    axios
+      .get(`/api/locations`)
+      .then((response) => {
+        console.log(response);
+        setLocations(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const handleFormSubmit = (event) => {
-    // Todo: Fix regex validation to not accept numbers
-    //  get ride of alerts for toasts
-
     let isnum = /^\d+$/.test(zipcode);
     console.log(isnum);
     event.preventDefault();
@@ -69,7 +79,7 @@ const About = () => {
   return (
     <>
       <Sidenav />
-      <div>
+      {/* <div>
         <div className="container">
           <div className="row">
             <div className="col s6">
@@ -171,6 +181,35 @@ const About = () => {
             </div>
           </div>
         </div>
+      </div> */}
+      <div className="container">
+        {locations.map(({ name, city, state, street }) => (
+          <div className="row">
+            <ul className="collection">
+              <li className="collection-item avatar">
+                <i className=" material-icons circle red">location_on</i>
+                <span className="title">
+                  <strong>{name}</strong>
+                </span>
+                <p>
+                  <strong>{street}</strong>
+                  <br />
+                  <strong>{city} </strong>
+                  <br />
+                  <strong>{state} </strong>
+                  <br />
+                  <strong>Edit Location</strong>
+                  <a>
+                    <i className="material-icons">edit</i>
+                  </a>
+                </p>
+                <a href="#!" className="secondary-content">
+                  <i className="material-icons">delete</i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        ))}
       </div>
     </>
   );
