@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SingleLocation from "./pages/ViewSingleLocation/SingleLocation";
 import ViewLocations from "./pages/ViewLocations/ViewLocations";
-import ItemCreate from './components/ItemCreate'
-import ItemUpdate from './components/ItemUpdate'
+import ItemCreate from "./components/ItemCreate";
+import ItemUpdate from "./components/ItemUpdate";
 import M from "materialize-css";
 import { useEffect, useState } from "react";
 import ResourceCard from "../src/components/ResourceCard";
@@ -11,15 +11,15 @@ import Resources from "./pages/Resources";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
-
+import LocationCreate from "./pages/LocationCreate";
+import EditLocation from "./pages/LocationUpdate";
 function App() {
   useEffect(() => {
     M.AutoInit();
-    console.log(user)
   }, []);
 
   const [user, setUser] = useState({
-    _id: ""
+    _id: "",
   });
 
   return (
@@ -30,10 +30,29 @@ function App() {
           <Route exact path="/resources" component={Resources} />
           <Route exact path="/admin" component={Admin} />
           <Route exact path="/locations" component={ViewLocations} />
-          <Route exact path="/api/locations/:id" component={SingleLocation} />
+          <Route exact path="/admin/locations/:id" component={SingleLocation} />
           <Route exact path="/items" component={ItemCreate} />
-          <Route exact path="/api/:locationId/items/:id/edit" component={ItemUpdate} />
-          <Route exact path="/login" component={(props) => <Login {...props} setUser={setUser} />} />
+          <Route
+            exact
+            path="/:locationId/items/:id/edit"
+            component={ItemUpdate}
+          />
+          <Route
+            exact
+            path="/admin/location/create"
+            component={LocationCreate}
+          />
+          <Route
+            exact
+            path="/admin/locations/:id/edit"
+            
+            component={EditLocation}
+          />
+          <Route
+            exact
+            path="/login"
+            component={(props) => <Login {...props} setUser={setUser} />}
+          />
         </Switch>
       </Router>
     </div>
