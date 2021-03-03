@@ -25,7 +25,7 @@ const About = () => {
     console.log(isnum);
     event.preventDefault();
     !isnum
-      ? alert("please enter a VALID zipcode")
+      ? M.toast({ html: "Please enter a VALID zip code!" })
       : !name
       ? M.toast({ html: "Please enter a location name" })
       : !city
