@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 const Location = ({ name, id, image, city, street, zipcode, state }) => {
     const currentLocation = useLocation().pathname;
-    const locationUrl = '/locations/' + id;
+    let locationUrl = '/locations/' + id;
     if (currentLocation.includes('admin')) {
         locationUrl = '/admin' + locationUrl;
     }
