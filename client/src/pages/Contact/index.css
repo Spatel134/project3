@@ -1,0 +1,26 @@
+#hero{
+    /* background-color: rgba(245, 182, 115, 0.5); */
+    /* opacity: .5; */
+    display: block;
+    height: 100vh;
+    width: 100%;
+
+}
+
+#hero::before{
+    /* opacity: .5; */
+    content: "";
+
+    background-image: url("https://wpcdn.us-east-1.vip.tn-cloud.net/www.sactownmag.com/content/uploads/2020/10/121610343_2690149421252095_9180172192574381574_n.jpg");
+    background-color: rgba(245, 182, 115, 0.5);
+
+    /* background-image: url('https://placekitten.com/1200/800'); */
+    /* background-size: cover; */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.5;
+    z-index: -1;
+}
