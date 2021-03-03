@@ -5,7 +5,7 @@ import ViewLocations from "./pages/ViewLocations/ViewLocations";
 import ItemCreate from './components/ItemCreate'
 import ItemUpdate from './components/ItemUpdate'
 import M from "materialize-css";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import ResourceCard from "../src/components/ResourceCard";
 import Resources from "./pages/Resources";
 import Home from "./pages/Home";
@@ -13,9 +13,9 @@ import Admin from "./pages/Admin";
 import Contact from "./pages/Contact"
 
 function App() {
-  useEffect(() => {
-    M.AutoInit();
-  }, []);
+  // useEffect(() => {
+  //   // M.AutoInit();
+  // }, []);
 
 
 

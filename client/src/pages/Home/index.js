@@ -2,11 +2,13 @@ import React from 'react';
 import image from '../../assets/images/community-fridge.jfif';
 import { Link } from 'react-router-dom';
 import Sidenav from '../../components/Sidenav';
+import MaterialSideNav from '../../components/Sidenav/MaterialSideNav';
 
 const Home = () => {
     return (
         <>
             <Sidenav title="Community Fridge" />
+            {/* <MaterialSideNav/> */}
 
             <div class="section white">
                 <div class="row container">
