@@ -14,6 +14,7 @@ module.exports = {
   },
   create: function (req, res) {
     const id = req.body.selectedLocation;
+    console.log("hellooooo" + id)
 
     const item = {
       name: req.body.name,
@@ -23,15 +24,18 @@ module.exports = {
     };
 
     db.Item.create(item)
+
       .then((dbModel) => {
+        console.log(dbModel)
         db.Location.findOneAndUpdate(
           { _id: id },
           { $push: { items: dbModel._id } },
           { new: true }
         ).then((response) => {
-        res.json(response);
-
+          console.log(response)
+          res.json(response);
         });
+
       })
       .catch((err) => res.status(422).json(err));
   },
@@ -61,12 +65,12 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-    remove: function (req, res) {
-      db.Item.findById({ _id: req.params.id })
-        .then((dbModel) => dbModel.remove())
-        .then((dbModel) => res.json(dbModel))
-        .catch((err) => res.status(422).json(err));
-    },
+  remove: function (req, res) {
+    db.Item.findById({ _id: req.params.id })
+      .then((dbModel) => dbModel.remove())
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
   //   deleteItem: function (req, res) {
   //     db.Item.findById({ _id: req.params.id })
   //     .then((dbModel) => dbModel.remove())

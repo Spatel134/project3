@@ -13,6 +13,7 @@ const ItemAdd = () => {
       .post("/api/items", formObject)
       .then((response) => {
         history.push(`/api/locations/${response.data._id}`);
+        console.log(response)
       })
       .catch((err) => {
         console.log(err);
