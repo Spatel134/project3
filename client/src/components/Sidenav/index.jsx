@@ -64,11 +64,9 @@ To do: Add a contact page
 
 */}
 
-          {/* <Link to="/resources"> */}
           <a href='/#'>
             <i className=' sidenav-close material-icons'>phonelink</i> Contact
           </a>
-          {/* </Link> */}
         </li>
 
         <li>
@@ -80,9 +78,9 @@ To do: Add a contact page
           </a>
         </li>
         <li>
-          <Link to='/admin'>
-            <a href='/#'>
-              <i className=' sidenav-close material-icons'>account_box</i> Admin
+          <Link to='/login'>
+            <a>
+              <i className=' material-icons'>account_box</i> Admin
             </a>
           </Link>
           <li>

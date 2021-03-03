@@ -1,22 +1,17 @@
 import { useHistory } from "react-router-dom";
 import ItemForm from "../ItemForm/ItemForm";
-import React from 'react'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-import Sidenav from '../Sidenav'
-import M from 'materialize-css'
+import React from "react";
+import axios from "axios";
+import Sidenav from "../Sidenav";
+
 
 const ItemAdd = () => {
   const history = useHistory();
-  console.log("Add form loaded")
-
   const handleFormSubmit = (event, formObject) => {
     event.preventDefault();
     axios
       .post("/api/items", formObject)
       .then((response) => {
-        console.log(response.data);
-
         history.push(`/api/locations/${response.data._id}`);
       })
       .catch((err) => {

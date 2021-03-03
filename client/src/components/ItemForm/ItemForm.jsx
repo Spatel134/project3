@@ -21,7 +21,6 @@ const ItemForm = (props) => {
     axios
       .get("/api/locations", { responseType: "json" })
       .then((response) => {
-        console.log(response.data);
         if (response.data) {
           setLocations(response.data);
         }
@@ -34,7 +33,6 @@ const ItemForm = (props) => {
       axios
         .get(`/api/items/${id}`)
         .then((response) => {
-          console.log(response.data);
           setName(response.data.name);
           setAddedBy(response.data.addedBy);
           setExpiration(moment(response.data.expiration).format("YYYY-MM-DD"));
