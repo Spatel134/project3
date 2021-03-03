@@ -45,6 +45,7 @@ function App() {
             path="/admin/location/create"
             component={LocationCreate}
           />
+          <Route exact path="/admin/locations/:id" component={SingleLocation} />
           <Route
             exact
             path="/admin/locations/:id/edit"

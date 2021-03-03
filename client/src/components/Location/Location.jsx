@@ -1,7 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Location = ({ name, id, image, city, street, zipcode, state }) => {
+    const currentLocation = useLocation().pathname;
+    const locationUrl = '/locations/' + id;
+    if (currentLocation.includes('admin')) {
+        locationUrl = '/admin' + locationUrl;
+    }
   return (
     <div className='col l3 m3 s3 xs3'>
       <div className='card'>
@@ -9,7 +14,7 @@ const Location = ({ name, id, image, city, street, zipcode, state }) => {
           <img alt={name} src={image} />
 
           <span className='card-title'></span>
-          <Link to={`/admin/locations/${id}`}>
+          <Link to={locationUrl}>
             <a
               href='/#'
               className='btn-floating halfway-fab waves-effect waves-light red'
