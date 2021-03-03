@@ -12,7 +12,7 @@ const ItemAdd = () => {
     axios
       .post("/api/items", formObject)
       .then((response) => {
-        history.push(`/api/locations/${response.data._id}`);
+        history.push(`/locations/${response.data._id}`);
       })
       .catch((err) => {
         console.log(err);
