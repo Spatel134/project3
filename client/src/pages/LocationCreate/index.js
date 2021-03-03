@@ -1,11 +1,16 @@
 import React from "react";
+import AdminSideNav from "../../components/AdminSideNav";
 import LocationCreateForm from "../../components/LocationCreateForm";
 import LocationDelete from "../../components/LocationDelete";
-import Sidenav from "../../components/Sidenav";
+import { useContext } from 'react';
+import AdminContext from "../../Context/AdminContext"
+
+
 const LocationCreate = () => {
+  const { admin, setAdmin } = useContext(AdminContext);
   return (
     <>
-      <Sidenav />
+      <AdminSideNav admin={admin} />
 
       <div>
         <div className="container">

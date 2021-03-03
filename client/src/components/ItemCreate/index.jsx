@@ -24,7 +24,6 @@ const ItemAdd = () => {
       <Sidenav />
       <div>
         <div className="container">
-          <nav className="transparent waves-effect waves-cyan"> </nav>
           <div className="row">
             <div className="col s6">
               <img

@@ -9,14 +9,14 @@ const Location = ({ name, id, image, city, street, zipcode, state }) => {
           <img alt={name} src={image} />
 
           <span className='card-title'></span>
-          <Link to={`/admin/locations/${id}`}>
+          <Link to={`/locations/${id}`}>
             <a
               href='/#'
               className='btn-floating halfway-fab waves-effect waves-light red'
             >
               <i className='material-icons'>location_on</i>
-          </a>
-            </Link>
+            </a>
+          </Link>
         </div>
         <div className='card-content'>
           <strong>{name}</strong>
