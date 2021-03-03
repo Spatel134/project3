@@ -33,7 +33,7 @@ const AdminSideNav = ({ admin }) => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/admin/locations'>
+                    <Link to='/admin/location/view'>
                         <i className=' material-icons'>location_on</i> View Locations
                     </Link>
                 </li>

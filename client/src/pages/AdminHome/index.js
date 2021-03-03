@@ -26,7 +26,7 @@ const AdminHome = () => {
                                 <p> Viewing different fridge locations</p>
                             </div>
                             <div class="card-action">
-                                <Link to="/admin/locations">Click Here To View Locations</Link>
+                                <Link to="/admin/location/view">Click Here To View Locations</Link>
                             </div>
                         </div>
                     </div>

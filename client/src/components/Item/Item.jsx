@@ -7,23 +7,23 @@ const Item = ({
   locationId,
   item: { _id, name, category, addedBy, date, expiration },
 }) => {
-    const history = useHistory();
-    const handleDeleteClick = (id) => {
-        axios
-          .delete(`/api/items/${id}`)
-          .then((response) => {
-            history.go(0);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      };
+  const history = useHistory();
+  const handleDeleteClick = (id) => {
+    axios
+      .delete(`/api/items/${id}`)
+      .then((response) => {
+        history.go(0);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-       const currentLocation = useLocation().pathname;
-       let showAdminActions = "hide";
-       if (currentLocation.includes('admin')) {
-           showAdminActions = "";
-       }
+  const currentLocation = useLocation().pathname;
+  let showAdminActions = "hide";
+  if (currentLocation.includes('admin')) {
+    showAdminActions = "";
+  }
   return (
     <tr>
       <td>{name}</td>
@@ -33,7 +33,7 @@ const Item = ({
       <td>{moment(expiration).format("MM-DD-YYYY")}</td>
       <td className={showAdminActions}>
         <Link
-          to={`/api/${locationId}/items/${_id}/edit`}
+          to={`/admin/${locationId}/items/${_id}/edit`}
           className="waves-effect waves-light btn"
         >
           Edit
@@ -45,8 +45,8 @@ const Item = ({
           onClick={() => {
             handleDeleteClick(_id);
           }}
-        > 
-          Delete 
+        >
+          Delete
         </button>
       </td>
     </tr>

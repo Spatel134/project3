@@ -14,7 +14,7 @@ import Login from "./pages/Login";
 import LocationCreate from "./pages/LocationCreate";
 import EditLocation from "./pages/LocationUpdate";
 import AdminContext from "./Context/AdminContext";
-import AdminViewItems from "./pages/AdminViewItems";
+
 
 function App() {
   useEffect(() => {
@@ -38,12 +38,13 @@ function App() {
           {/* admin access */}
           <AdminContext.Provider value={{ admin, setAdmin }}>
             <Route exact path="/login" component={Login} />
-            <Route exact path="/admin/location/create" component={LocationCreate} />
-            <Route exact path="/admin/locations/:id/edit" component={EditLocation} />
             <Route exact path="/admin/:adminId" component={AdminHome} />
+            <Route exact path="/admin/location/create" component={LocationCreate} />
+            <Route exact path="/admin/location/view" component={ViewLocations} />
+            <Route exact path="/admin/locations/:id/edit" component={EditLocation} />
             <Route exact path="/admin/item/create" component={ItemCreate} />
             <Route exact path="/admin/:locationId/items/:id/edit" component={ItemUpdate} />
-            <Route exact path="/admin/item/view" component={AdminViewItems} />
+            <Route exact path="/admin/locations/:id" component={SingleLocation} />
           </AdminContext.Provider>
         </Switch>
       </Router>

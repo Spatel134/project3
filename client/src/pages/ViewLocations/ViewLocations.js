@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useLocation } from "react-router";
 import Sidenav from "../../components/Sidenav";
 import Location from "../../components/Location/Location";
 import axios from "axios";
+import AdminContext from "../../Context/AdminContext"
+import AdminSideNav from "../../components/AdminSideNav";
+
 
 const ViewLocations = () => {
+  const { admin, setAdmin } = useContext(AdminContext);
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
@@ -15,10 +20,10 @@ const ViewLocations = () => {
       setLocations(res.data);
     });
   };
-
+  const currentLocation = useLocation().pathname;
   return (
     <>
-      <Sidenav />
+      {currentLocation.includes('admin') ? <AdminSideNav admin={admin} /> : <Sidenav />}
 
       <div className="container">
         <div className="row">

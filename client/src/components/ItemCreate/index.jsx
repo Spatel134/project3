@@ -2,10 +2,14 @@ import { useHistory } from "react-router-dom";
 import ItemForm from "../ItemForm/ItemForm";
 import React from "react";
 import axios from "axios";
-import Sidenav from "../Sidenav";
+import AdminSideNav from "../AdminSideNav";
+import { useContext } from 'react';
+import AdminContext from "../../Context/AdminContext"
+
 
 
 const ItemAdd = () => {
+  const { admin, setAdmin } = useContext(AdminContext);
   const history = useHistory();
   const handleFormSubmit = (event, formObject) => {
     event.preventDefault();
@@ -21,7 +25,7 @@ const ItemAdd = () => {
 
   return (
     <>
-      <Sidenav />
+      <AdminSideNav admin={admin} />
       <div>
         <div className="container">
           <div className="row">

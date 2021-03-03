@@ -24,7 +24,8 @@ const AdminViewItems = () => {
 
     return (
         <>
-            <AdminSideNav />
+
+
 
             <div className="container">
                 <div className="row">
