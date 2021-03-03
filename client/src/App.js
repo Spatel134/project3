@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SingleLocation from "./pages/ViewSingleLocation/SingleLocation";
 import ViewLocations from "./pages/ViewLocations/ViewLocations";
-import ItemCreate from "./components/ItemCreate";
+import ItemCreate from './components/ItemCreate'
+import ItemUpdate from './components/ItemUpdate'
 import M from "materialize-css";
 import { useEffect } from "react";
 import Resources from "./pages/Resources";
@@ -25,7 +26,8 @@ function App() {
           <Route exact path="/admin" component={Admin} />
           <Route exact path="/locations" component={ViewLocations} />
           <Route exact path="/api/locations/:id" component={SingleLocation} />
-          <Route exact path="/forms" component={ItemCreate} />
+          <Route exact path="/items" component={ItemCreate} />
+          <Route exact path="/api/:locationId/items/:id/edit" component={ItemUpdate} />
         </Switch>
       </Router>
     </div>

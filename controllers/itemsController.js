@@ -3,38 +3,43 @@ console.log("Item!");
 // Defining methods for the locationsController
 module.exports = {
   findAll: function (req, res) {
-    console.log(req)
     db.Item.find(req.query)
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
+      console.log("finding by id");
     db.Item.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-
     const id = req.body.selectedLocation;
 
     const item = {
       name: req.body.name,
       category: req.body.category,
       addedBy: req.body.addedBy,
-      expiration: req.body.expiration
-    }
+      expiration: req.body.expiration,
+    };
 
     db.Item.create(item)
       .then((dbModel) => {
-        db.Location.findOneAndUpdate({ _id: id }, { $push: { items: dbModel._id } }, { new: true })
-          .then(response => console.log(response));
-        res.send("Items has been created and stored in the new location")
-      }
-      )
+          console.log(req.body);
+        db.Location.findOneAndUpdate(
+          { _id: id },
+          { $push: { items: dbModel._id } },
+          { new: true }
+        ).then((response) => {
+          console.log(response);
+        res.json(response);
+
+        });
+      })
       .catch((err) => res.status(422).json(err));
   },
-  // *************************************  
+  // *************************************
   // createNew method calls create method
   // *************************************
   createNew: (req, res) => {

@@ -11,7 +11,7 @@ router
 router
   .route("/:id")
   .get(itemsController.findById)
-  // .put(itemsController.update)
+  .put(itemsController.update)
   // .delete(itemsController.remove);
 
 router.route("/:id/addItems");

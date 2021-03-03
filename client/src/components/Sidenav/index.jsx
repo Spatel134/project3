@@ -86,9 +86,9 @@ To do: Add a contact page
             </a>
           </Link>
           <li>
-            <Link to='/forms'>
-              <a href='/#'>
-                <i className='  sidenav-close material-icons'>add</i> Add Items
+            <Link to='/items'>
+              <a>
+                <i className=' material-icons'>add</i> Add Items
               </a>
             </Link>
           </li>
