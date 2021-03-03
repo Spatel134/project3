@@ -9,6 +9,7 @@ import ResourceCard from "../src/components/ResourceCard";
 import Resources from "./pages/Resources";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
+import Contact from "./pages/Contact"
 
 function App() {
   useEffect(() => {
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/locations" component={ViewLocations} />
           <Route exact path="/api/locations/:id" component={SingleLocation} />
           <Route exact path="/forms" component={ItemCreate} />
+          <Route exact path="/contact" component={Contact} />
         </Switch>
       </Router>
     </div>
