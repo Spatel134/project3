@@ -13,7 +13,7 @@ const AdminHome = () => {
             {console.log(admin)}
             <div class="section white">
                 <div class="row container">
-                    <h2 className="center-align">Welcome Admin</h2>
+                    <h2 className="center-align">Welcome {admin.email}</h2>
                 </div>
 
                 <div className="row">
