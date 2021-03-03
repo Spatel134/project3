@@ -15,7 +15,8 @@ const Home = () => {
                 </div>
             </div>
             <div class="parallax-container">
-                <div class="parallax"><img src={image} />
+                <div class="parallax"><img src={image}
+                alt="New Your based community fridge" />
                 </div>
                 <div style={{ position: "absolute", top: "30%", left: "20%" }}>
                     <h1 style={{ color: "white" }}>Click Here to View The Location of The Fridges</h1>

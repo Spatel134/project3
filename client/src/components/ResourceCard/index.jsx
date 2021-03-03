@@ -39,15 +39,16 @@ const index = () => {
   return (
     <>
       {datas.map(data => (
-        <div className='col s4'>
+        <div className='col m4 s4'>
           <div className='card'>
             <div className='card-image'>
-              <img src={data.picture} />
+              <img alt="Relevant resource for starting a community fridge" src={data.picture} />
               <span className='card-title'></span>
               <a
                 style={{ display: 'table-cell' }}
                 href={data.link}
                 target='_blank'
+                rel="noreferrer" 
                 className='btn-floating halfway-fab waves-effect waves-light red'
               >
                 <i className=' material-icons'>info_outline</i>
