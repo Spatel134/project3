@@ -12,7 +12,7 @@ router
   .route("/:id")
   .get(itemsController.findById)
   .put(itemsController.update)
-  // .delete(itemsController.remove);
+  .delete(itemsController.remove);
 
 router.route("/:id/addItems");
 // .get(itemsController.findByIdWithItems)

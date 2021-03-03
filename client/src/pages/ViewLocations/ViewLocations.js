@@ -14,18 +14,13 @@ const ViewLocations = () => {
     const loadLocation = () => {
 
         axios.get("/api/locations").then(res => {
-            console.log(res.data)
             setLocations(res.data)
         })
     }
     let colSize;
     if (12 % locations.length === 0 && 12 > locations.length) {
-        console.log("fisrt statment");
         colSize = 12 / locations.length;
-        console.log(colSize)
-
     } else {
-        console.log("second statment")
         colSize = 6;
     }
 
