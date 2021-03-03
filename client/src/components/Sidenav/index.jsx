@@ -89,6 +89,11 @@ To do: Add a contact page
                 <i className=' material-icons'>add</i> Add Items
               </a>
             </Link>
+            <Link to='/admin/location/create'>
+              <a>
+                <i className=' material-icons'>edit_location</i> Manage Locations
+              </a>
+            </Link>
           </li>
         </li>
       </ul>
