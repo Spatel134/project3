@@ -1,7 +1,6 @@
 import React from "react";
 import moment from "moment";
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import axios from "axios";
 
 const Item = ({
@@ -19,6 +18,12 @@ const Item = ({
             console.log(err);
           });
       };
+
+       const currentLocation = useLocation().pathname;
+       let showAdminActions = "hide";
+       if (currentLocation.includes('admin')) {
+           showAdminActions = "";
+       }
   return (
     <tr>
       <td>{name}</td>
@@ -26,7 +31,7 @@ const Item = ({
       <td>{addedBy}</td>
       <td>{moment(date).format("MM-DD-YYYY")}</td>
       <td>{moment(expiration).format("MM-DD-YYYY")}</td>
-      <td>
+      <td className={showAdminActions}>
         <Link
           to={`/api/${locationId}/items/${_id}/edit`}
           className="waves-effect waves-light btn"
@@ -34,7 +39,7 @@ const Item = ({
           Edit
         </Link>
       </td>
-      <td>
+      <td className={showAdminActions}>
         <button
           className="waves-effect waves-light btn"
           onClick={() => {
