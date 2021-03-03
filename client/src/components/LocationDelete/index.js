@@ -55,15 +55,7 @@ const DeleteLocation = () => {
                 <strong>{state} </strong>
                 <br />
                 <strong>Edit Location</strong>
-                {/* 
-
-
-            Todo: add below route to edit route. For now the  route just goes to the page.
-
-               <Link to={`/api/locations/${_id}/edit`}>
-            
-            
-            */}
+ 
 
                 <Link to={`/admin/locations/${_id}/edit`}>
                   <a href="javascript:void(0);">
