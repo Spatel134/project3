@@ -1,8 +1,8 @@
 import React from "react";
 import LocationCreateForm from "../../components/LocationCreateForm";
-import DeleteLocation from "../../components/DeleteLocation";
+import LocationDelete from "../../components/LocationDelete";
 import Sidenav from "../../components/Sidenav";
-const CreateLocation = () => {
+const LocationCreate = () => {
   return (
     <>
       <Sidenav />
@@ -11,7 +11,7 @@ const CreateLocation = () => {
         <div className="container">
           <div className="row">
             <div className="col s6">
-              <DeleteLocation />
+              <LocationDelete />
             </div>
             <div className="col s6">
               <LocationCreateForm />
@@ -23,4 +23,4 @@ const CreateLocation = () => {
   );
 };
 
-export default CreateLocation;
+export default LocationCreate;
