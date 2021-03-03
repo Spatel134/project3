@@ -83,7 +83,7 @@ To do: Add a contact page
             </a>
           </Link>
           <li>
-            <Link to='/forms'>
+            <Link to='/items'>
               <a>
                 <i className=' material-icons'>add</i> Add Items
               </a>
