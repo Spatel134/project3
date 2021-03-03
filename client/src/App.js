@@ -40,6 +40,8 @@ function App() {
             path="/:locationId/items/:id/edit"
             component={ItemUpdate}
           />
+                    <Route exact path="/admin/locations" component={ViewLocations} />
+
           <Route
             exact
             path="/admin/location/create"
