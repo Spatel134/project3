@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Item from "../../components/Item/Item";
-import { useParams } from "react-router";
+import { useParams, useLocation } from "react-router";
 import axios from "axios";
 import Sidenav from "../../components/Sidenav";
+import AdminSideNav from "../../components/AdminSideNav";
+import AdminContext from "../../Context/AdminContext"
+
 
 const SingleLocation = () => {
+  const { admin, setAdmin } = useContext(AdminContext);
   const [location, setLocation] = useState({});
   const [items, setItems] = useState([]);
   const { id } = useParams();
@@ -21,10 +25,11 @@ const SingleLocation = () => {
         setItems(items);
       });
   };
-
+  const currentLocation = useLocation().pathname;
   return (
     <>
-      <Sidenav />
+      {currentLocation.includes('admin') ? <AdminSideNav admin={admin} /> : <Sidenav />}
+
 
       <div className="container">
         <div className="row">

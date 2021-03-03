@@ -83,18 +83,7 @@ To do: Add a contact page
               <i className=' material-icons'>account_box</i> Admin
             </a>
           </Link>
-          <li>
-            <Link to='/items'>
-              <a>
-                <i className=' material-icons'>add</i> Add Items
-              </a>
-            </Link>
-            <Link to='/admin/location/create'>
-              <a>
-                <i className=' material-icons'>edit_location</i> Manage Locations
-              </a>
-            </Link>
-          </li>
+
         </li>
       </ul>
       <a href='html#' data-target='slide-out' className='sidenav-trigger'>

@@ -13,7 +13,7 @@ const AdminHome = () => {
             {console.log(admin)}
             <div class="section white">
                 <div class="row container">
-                    <h2 className="center-align">Welcome Admin</h2>
+                    <h2 className="center-align">Welcome {admin.email}</h2>
                 </div>
 
                 <div className="row">
@@ -26,7 +26,7 @@ const AdminHome = () => {
                                 <p> Viewing different fridge locations</p>
                             </div>
                             <div class="card-action">
-                                <Link to="/admin/locations">Click Here To View Locations</Link>
+                                <Link to="/admin/location/view">Click Here To View Locations</Link>
                             </div>
                         </div>
                     </div>
