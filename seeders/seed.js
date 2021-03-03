@@ -10,25 +10,25 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3", {
 
 
 
-let item = [
-    {
-        name: "Peanut Butter",
-        category: "Pantry",
-        addedBy: "James",
-        date: new Date(Date.now()),
-        expiration: new Date(Date.now()),
+// let item = [
+//     {
+//         name: "Peanut Butter",
+//         category: "Pantry",
+//         addedBy: "James",
+//         date: new Date(Date.now()),
+//         expiration: new Date(Date.now()),
 
-    },
-    {
-        name: "Whole Milk",
-        category: "Fridge",
-        addedBy: "James",
-        date: new Date(Date.now()),
-        expiration: new Date(Date.now()),
+//     },
+//     {
+//         name: "Whole Milk",
+//         category: "Fridge",
+//         addedBy: "James",
+//         date: new Date(Date.now()),
+//         expiration: new Date(Date.now()),
 
-    }
+//     }
 
-]
+// ]
 
 let locations = [
     {
@@ -64,17 +64,17 @@ db.Location.deleteMany({})
         process.exit(1);
     })
 
-db.Item.deleteMany({})
-    .then(() => db.Item.collection.insertMany(item))
-    .then(data => {
-        console.log(data.result.n + " records inserted!");
-        process.exit(0);
+// db.Item.deleteMany({})
+//     .then(() => db.Item.collection.insertMany(item))
+//     .then(data => {
+//         console.log(data.result.n + " records inserted!");
+//         process.exit(0);
 
-    })
-    .catch(err => {
-        console.error(err);
-        process.exit(1)
-    });
+//     })
+//     .catch(err => {
+//         console.error(err);
+//         process.exit(1)
+//     });
 
 
 
