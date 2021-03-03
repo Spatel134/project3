@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Location = ({ name, id, image, city, street, zipcode, state }) => {
   return (
-    <div className='col s4 m4'>
+    <div className='col l3 m3 s3 xs3'>
       <div className='card'>
         <div className='card-image'>
           <img alt={name} src={image} />
