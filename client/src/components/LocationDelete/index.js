@@ -65,7 +65,7 @@ const DeleteLocation = () => {
             
             */}
 
-                <Link to={`/api/locations/${_id}`}>
+                <Link to={`/admin/locations/${_id}/edit`}>
                   <a href="javascript:void(0);">
                     <i className="material-icons">edit</i>
                   </a>
