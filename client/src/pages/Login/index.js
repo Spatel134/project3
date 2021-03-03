@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import AdminContext from "../../Context/AdminContext"
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import jwt from "jsonwebtoken";
 
-const Login = ({ setUser }) => {
+const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const { admin, setAdmin } = useContext(AdminContext)
     const history = useHistory();
 
     const handleFormSubmit = (e) => {
@@ -22,9 +23,8 @@ const Login = ({ setUser }) => {
                         if (err) {
                             console.log(err);
                         } else {
-                            console.log(decoded.email)
-                            setUser({ _id: decoded._id, email: response.data.email });
-                            history.push("/admin");
+                            setAdmin({ _id: decoded._id, email: response.data.email });
+                            history.push(`/admin/${decoded._id}`);
                         }
                     }
                 );
