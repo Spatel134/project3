@@ -43,11 +43,11 @@ const ItemForm = (props) => {
           console.log(err);
         });
     } else {
-        setName("");
-          setCategory("");
-          setAddedBy("");
-          setExpiration("");
-          
+      setName("");
+      setCategory("");
+      setAddedBy("");
+      setExpiration("");
+
     }
   }, [id]);
 
@@ -119,11 +119,14 @@ const ItemForm = (props) => {
         </select>
         <label>Category</label>
       </div>
+
+
       <div className="input-field col s12">
         <select
           id="location"
           className="browser-default"
           onChange={(event) => setSelectedLocation(event.target.value)}
+          defaultValue="Choose Your Option"
         >
           {/* 
                   
@@ -131,7 +134,7 @@ const ItemForm = (props) => {
                   the list of all of the fridges 
                   
                   */}
-          <option value="" disabled defaultValue>
+          <option value="Choose Your Option" disabled>
             Choose your option
           </option>
           {locations.map((location) => (
@@ -142,6 +145,9 @@ const ItemForm = (props) => {
         </select>
         <label className="active">Choose Location</label>
       </div>
+
+
+
       <button className="waves-effect waves-light btn">
         {props.buttonText}
       </button>
