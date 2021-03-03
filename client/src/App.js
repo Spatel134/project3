@@ -30,7 +30,7 @@ function App() {
           <Route exact path="/resources" component={Resources} />
           <Route exact path="/admin" component={Admin} />
           <Route exact path="/locations" component={ViewLocations} />
-          <Route exact path="/admin/locations/:id" component={SingleLocation} />
+          <Route exact path="/locations/:id" component={SingleLocation} />
           <Route exact path="/items" component={ItemCreate} />
           <Route
             exact
