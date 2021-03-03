@@ -10,6 +10,7 @@ import ResourceCard from "../src/components/ResourceCard";
 import Resources from "./pages/Resources";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
+import Contact from "./pages/Contact"
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/api/locations/:id" component={SingleLocation} />
           <Route exact path="/items" component={ItemCreate} />
           <Route exact path="/api/:locationId/items/:id/edit" component={ItemUpdate} />
+          <Route exact path="/contact" component={Contact} />
         </Switch>
       </Router>
     </div>
