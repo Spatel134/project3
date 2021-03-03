@@ -63,11 +63,11 @@ To do: Add a contact page
 
 */}
 
-          {/* <Link to="/resources"> */}
+          <Link to="/contact">
           <a>
             <i className=' material-icons'>phonelink</i> Contact
           </a>
-          {/* </Link> */}
+          </Link>
         </li>
 
         <li>
