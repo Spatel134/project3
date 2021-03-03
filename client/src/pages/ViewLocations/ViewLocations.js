@@ -19,6 +19,7 @@ const ViewLocations = () => {
   return (
     <>
       <Sidenav />
+      <h1>This is the location page</h1>
 
       <div className="container">
         <div className="row">

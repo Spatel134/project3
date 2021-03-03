@@ -11,6 +11,8 @@ import Resources from "./pages/Resources";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
+import Contact from "./pages/Contact"
+
 
 function App() {
   useEffect(() => {
@@ -33,6 +35,7 @@ function App() {
           <Route exact path="/api/locations/:id" component={SingleLocation} />
           <Route exact path="/items" component={ItemCreate} />
           <Route exact path="/api/:locationId/items/:id/edit" component={ItemUpdate} />
+          <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={(props) => <Login {...props} setUser={setUser} />} />
         </Switch>
       </Router>
