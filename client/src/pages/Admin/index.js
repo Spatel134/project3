@@ -18,20 +18,28 @@ const About = () => {
   }, []);
 
   const handleFormSubmit = (event) => {
-// Todo: Fix regex validation to not accept numbers
-//  get ride of alerts for toasts
+    // Todo: Fix regex validation to not accept numbers
+    //  get ride of alerts for toasts
 
-    // let isnum = /^\d+$/.test(event);
+    let isnum = /^\d+$/.test(zipcode);
+    console.log(isnum);
     event.preventDefault();
-    !name ||
-    !street ||
-    !city ||
-    !state ||
-    !image ||
-    zipcode.length > 5 ||
-    zipcode.length < 5 
-    // zipcode !== isnum
-      ? alert("Please complete all fields")
+    !isnum
+      ? alert("please enter a VALID zipcode")
+      : !name
+      ? M.toast({ html: "Please enter a location name" })
+      : !city
+      ? M.toast({ html: "Please enter a city" })
+      : !state
+      ? M.toast({ html: "Please enter a state" })
+      : !street
+      ? M.toast({ html: "Please enter a street " })
+      : !image
+      ? M.toast({
+          html: "Please enter a link to the url of the image of your location",
+        })
+      : zipcode.length > 5 || zipcode.length < 5
+      ? M.toast({ html: "Please enter a zip code that consists of 5 numbers " })
       : axios
           .post("/api/locations", {
             name,
@@ -49,7 +57,9 @@ const About = () => {
             setCity("");
             setStates("");
             setZipcode("");
-            alert("Your location has been added");
+            setImage("");
+            // alert("Your location has been added");
+            M.toast({ html: "Your location has been added successfully!" });
           })
           .catch((err) => {
             console.log(err);
