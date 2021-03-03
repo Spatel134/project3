@@ -14,19 +14,20 @@ const Login = ({ setUser }) => {
         axios
             .post("/api/authentication/login", { email, password })
             .then((response) => {
-                console.log(response.data);
-                // jwt.verify(
-                //     response.data.token,
-                //     process.env.REACT_APP_SECRET,
-                //     (err, decoded) => {
-                //         if (err) {
-                //             console.log(err);
-                //         } else {
-                //             setUser({ _id: decoded._id });
-                //             history.push("/admin");
-                //         }
-                //     }
-                // );
+
+                jwt.verify(
+                    response.data.token,
+                    process.env.REACT_APP_SECRET,
+                    (err, decoded) => {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            console.log(decoded.email)
+                            setUser({ _id: decoded._id, email: response.data.email });
+                            history.push("/admin");
+                        }
+                    }
+                );
             })
             .catch((err) => {
                 console.log(err);

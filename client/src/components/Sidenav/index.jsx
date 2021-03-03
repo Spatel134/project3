@@ -77,7 +77,7 @@ To do: Add a contact page
           <a className='subheader'>Authorized Users Only</a>
         </li>
         <li>
-          <Link to='/admin'>
+          <Link to='/login'>
             <a>
               <i className=' material-icons'>account_box</i> Admin
             </a>
