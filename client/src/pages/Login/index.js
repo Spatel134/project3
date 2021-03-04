@@ -1,17 +1,31 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AdminContext from "../../Context/AdminContext"
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import jwt from "jsonwebtoken";
+import M from 'materialize-css'
 
 const Login = () => {
+
+    useEffect(() => {
+        M.AutoInit()
+    });
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { admin, setAdmin } = useContext(AdminContext)
     const history = useHistory();
 
     const handleFormSubmit = (e) => {
+        
         e.preventDefault();
+        !email
+      ? M.toast({ html: 'Please enter an authorized email address' })
+      : !password
+      ? M.toast({ html: 'Please enter an authorized password' })
+      : 
+
+
         axios
             .post("/api/authentication/login", { email, password })
             .then((response) => {
