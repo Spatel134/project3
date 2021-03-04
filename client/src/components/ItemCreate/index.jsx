@@ -33,7 +33,7 @@ const ItemAdd = () => {
       : axios
           .post('/api/items', formObject)
           .then(response => {
-            history.push(`admin/locations/${response.data._id}`)
+            history.push(`/admin/locations/${response.data._id}`)
           })
           .catch(err => {
             console.log(err)
