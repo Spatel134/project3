@@ -20,7 +20,6 @@ const ItemAdd = () => {
   const history = useHistory()
   const handleFormSubmit = (event, formObject) => {
     event.preventDefault()
-    console.log(formObject.name)
     !formObject.name
       ? M.toast({ html: 'Please enter a descriptive name for your item' })
       : !formObject.addedBy
@@ -34,7 +33,7 @@ const ItemAdd = () => {
       : axios
           .post('/api/items', formObject)
           .then(response => {
-            history.push(`/locations/${response.data._id}`)
+            history.push(`admin/locations/${response.data._id}`)
           })
           .catch(err => {
             console.log(err)
