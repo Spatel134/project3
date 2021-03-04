@@ -12,6 +12,7 @@ const Item = ({
     axios
       .delete(`/api/items/${id}`)
       .then((response) => {
+        history.push(`/admin/locations/${locationId}`);
         history.go(0);
       })
       .catch((err) => {
