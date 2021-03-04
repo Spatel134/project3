@@ -63,7 +63,7 @@ const AdminSideNav = ({ admin }) => {
                 </li>
                 <li>
                     <Link to='/'>
-                        <i className=' material-icons'>account_box</i> SignOut
+                        <i className=' material-icons'>account_box</i> Sign Out
                     </Link>
                 </li>
             </ul>
