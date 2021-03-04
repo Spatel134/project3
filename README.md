@@ -38,7 +38,7 @@
 
 ---
 ## DEMO:
-![DEMO](./client/src/assets/images/community-chest.gif)
+![DEMO](./client/src/assets/images/Community-chest.gif)
 
 ## Preview: 
 ![Login](./client/src/assets/images/login.png)
