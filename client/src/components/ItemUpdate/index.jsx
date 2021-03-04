@@ -12,7 +12,7 @@ const ItemUpdate = () => {
     axios
       .put(`/api/items/${id}`, formObject)
       .then((response) => {
-        history.push(`/api/locations/${locationId}`);
+        history.push(`/admin/locations/${locationId}`);
       })
       .catch((err) => {
         console.log(err);
