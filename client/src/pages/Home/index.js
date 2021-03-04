@@ -2,6 +2,7 @@ import React from 'react';
 import image from '../../assets/images/community-fridge.jfif';
 import { Link } from 'react-router-dom';
 import Sidenav from '../../components/Sidenav';
+import Footer from '../../components/Footer';
 
 const Home = () => {
     return (
@@ -23,6 +24,8 @@ const Home = () => {
                     <Link to="/locations" className="waves-effect waves-dark btn-large">View Fridges</Link>
                 </div>
             </div>
+
+            <Footer/>
 
 
 
