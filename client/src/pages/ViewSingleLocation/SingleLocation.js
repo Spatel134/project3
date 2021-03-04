@@ -38,7 +38,7 @@ const SingleLocation = () => {
           </div>
           <div className="col s12">
             <p className="center-align">
-              Located in:{" "}
+              <strong>Located: </strong>
               {`${location.street}, ${location.city}, ${location.state}, ${location.zipcode}`}
             </p>
           </div>
@@ -49,10 +49,10 @@ const SingleLocation = () => {
               <thead>
                 <tr>
                   <th>Name</th>
-                  <th>category</th>
-                  <th>addedBy</th>
-                  <th>date</th>
-                  <th>expiration</th>
+                  <th>Category</th>
+                  <th>Item Added By</th>
+                  <th>Date Added</th>
+                  <th>Expiration</th>
                 </tr>
               </thead>
 
