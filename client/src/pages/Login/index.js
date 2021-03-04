@@ -23,7 +23,10 @@ const Login = () => {
                         if (err) {
                             console.log(err);
                         } else {
-                            setAdmin({ _id: decoded._id, email: response.data.email });
+
+                           setAdmin({ _id: decoded._id, email: response.data.email });
+                            sessionStorage.setItem("id", decoded._id);
+                            sessionStorage.setItem("email", response.data.email);
                             history.push(`/admin/${decoded._id}`);
                         }
                     }
