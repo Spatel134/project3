@@ -58,14 +58,7 @@ import WhatshotTwoToneIcon from "@material-ui/icons/WhatshotTwoTone";
 import { blue } from "@material-ui/core/colors";
 import Link from "@material-ui/core/Link";
 
-// const useStyles = makeStyles({
-//   list: {
-//     width: 250,
-//   },
-//   fullList: {
-//     width: 'auto',
-//   },
-// });
+
 
 export default function TemporaryDrawer() {
   // const classes = useStyles();
@@ -206,7 +199,7 @@ export default function TemporaryDrawer() {
                   <ListItemText primary={"Authorized User's Only"} />
                 </ListItem>
 
-                <Link href="/admin">
+                <Link href="/login">
                   <ListItem button key={"Admin"}>
                     <ListItemIcon>
                       {
@@ -219,7 +212,7 @@ export default function TemporaryDrawer() {
                   </ListItem>
                 </Link>
 
-                <Link href="/items">
+                {/* <Link href="/items">
                   <ListItem button key={"Add Items"}>
                     <ListItemIcon>
                       {
@@ -230,7 +223,7 @@ export default function TemporaryDrawer() {
                     </ListItemIcon>
                     <ListItemText primary={"Add Items"} />
                   </ListItem>
-                </Link>
+                </Link> */}
               </List>
               {/* <List>
         {['Authorized Users Only', 'Admin', 'Add Items'].map((text, index) => (
