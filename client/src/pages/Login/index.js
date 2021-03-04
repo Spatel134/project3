@@ -38,7 +38,7 @@ const Login = () => {
         <div className="container">
             <div className="row">
                 <div className="col s12">
-                    <h1 className="center-align">Welcome! Please login to continue</h1>
+                    <h3 className="center-align">Welcome! Please login to continue</h3>
                 </div>
             </div>
             <div className="row">
