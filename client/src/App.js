@@ -9,8 +9,8 @@ import { useEffect, useState } from "react";
 import AdminHome from "./pages/AdminHome";
 import Resources from "./pages/Resources";
 import Home from "./pages/Home";
-
 import Login from "./pages/Login";
+import Contact from "./pages/Contact"
 import LocationCreate from "./pages/LocationCreate";
 import EditLocation from "./pages/LocationUpdate";
 import AdminContext from "./Context/AdminContext";
@@ -35,6 +35,8 @@ function App() {
           <Route exact path="/resources" component={Resources} />
           <Route exact path="/locations" component={ViewLocations} />
           <Route exact path="/locations/:id" component={SingleLocation} />
+          <Route exact path="/contact" component={Contact} />
+
 
           {/* admin access */}
           <AdminContext.Provider value={{ admin, setAdmin }}>
