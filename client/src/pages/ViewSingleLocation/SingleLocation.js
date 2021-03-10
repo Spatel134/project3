@@ -4,8 +4,7 @@ import { useParams, useLocation } from "react-router";
 import axios from "axios";
 import Sidenav from "../../components/Sidenav";
 import AdminSideNav from "../../components/AdminSideNav";
-import AdminContext from "../../Context/AdminContext"
-
+import AdminContext from "../../Context/AdminContext";
 
 const SingleLocation = () => {
   const { admin, setAdmin } = useContext(AdminContext);
@@ -28,8 +27,11 @@ const SingleLocation = () => {
   const currentLocation = useLocation().pathname;
   return (
     <>
-      {currentLocation.includes('admin') ? <AdminSideNav admin={admin} /> : <Sidenav />}
-
+      {currentLocation.includes("admin") ? (
+        <AdminSideNav admin={admin} />
+      ) : (
+        <Sidenav />
+      )}
 
       <div className="container">
         <div className="row">

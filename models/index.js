@@ -2,5 +2,5 @@
 module.exports = {
   Item: require("./item"),
   Location: require("./location"),
-  User: require('./user')
+  User: require("./user"),
 };

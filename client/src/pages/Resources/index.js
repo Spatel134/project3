@@ -1,13 +1,12 @@
 import React from "react";
 import ResourceCard from "../../components/ResourceCard";
-import Sidenav from "../../components/Sidenav"
-
+import Sidenav from "../../components/Sidenav";
 
 const Resources = () => {
   return (
     <div>
       <>
-        <Sidenav/>
+        <Sidenav />
 
         <div className="container">
           <h2>Resources</h2>
@@ -21,7 +20,7 @@ const Resources = () => {
           </p>
           <br />
           <iframe
-          title="How to start a community fridge"
+            title="How to start a community fridge"
             width="100%vw"
             height="480"
             src="https://www.youtube.com/embed/y0M4DjVzX_c"

@@ -2,13 +2,11 @@ let mongoose = require("mongoose");
 let db = require("../models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
 });
-
-
 
 // let item = [
 //     {
@@ -31,38 +29,34 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3", {
 // ]
 
 let locations = [
-    {
-        name: "Bed-stuy Fridge",
-        street: "160 Quincy",
-        city: "Brooklyn",
-        state: "New York",
-        zipcode: "11216",
-        items: []
-
-    },
-    {
-        name: "Atlanta Fridge",
-        street: "123 Main st",
-        city: "Atlanta",
-        state: "Georgia",
-        zipcode: "11216",
-        items: []
-
-    },
+  {
+    name: "Bed-stuy Fridge",
+    street: "160 Quincy",
+    city: "Brooklyn",
+    state: "New York",
+    zipcode: "11216",
+    items: [],
+  },
+  {
+    name: "Atlanta Fridge",
+    street: "123 Main st",
+    city: "Atlanta",
+    state: "Georgia",
+    zipcode: "11216",
+    items: [],
+  },
 ];
 
 db.Location.deleteMany({})
-    .then(() => db.Location.collection.insertMany(locations))
-    .then(info => {
-
-        console.log(info.result.n + " records inserted!");
-        process.exit(0);
-
-    })
-    .catch(err => {
-        console.error(err);
-        process.exit(1);
-    })
+  .then(() => db.Location.collection.insertMany(locations))
+  .then((info) => {
+    console.log(info.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
 
 // db.Item.deleteMany({})
 //     .then(() => db.Item.collection.insertMany(item))
@@ -75,6 +69,3 @@ db.Location.deleteMany({})
 //         console.error(err);
 //         process.exit(1)
 //     });
-
-
-

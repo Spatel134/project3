@@ -15,7 +15,6 @@ const DeleteLocation = () => {
     axios
       .get(`/api/locations`)
       .then((response) => {
-        console.log(response);
         setLocations(response.data);
       })
       .catch((err) => {
@@ -24,11 +23,9 @@ const DeleteLocation = () => {
   }, []);
 
   const handleDeleteClick = (_id, name) => {
-    console.log(name);
     axios
       .delete(`/api/locations/${_id}`)
       .then((response) => {
-        console.log(response.data);
         M.toast({ html: `${name} has been removed! ` });
         history.go(0);
       })
@@ -55,7 +52,6 @@ const DeleteLocation = () => {
                 <strong>{state} </strong>
                 <br />
                 <strong>Edit Location</strong>
- 
 
                 <Link to={`/admin/locations/${_id}/edit`}>
                   <a href="javascript:void(0);">

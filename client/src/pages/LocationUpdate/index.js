@@ -1,9 +1,9 @@
-import React from 'react';
-import LocationUpdateView from "../../components/LocationUpdateView"
-import LocationUpdateForm from "../../components/LocationUpdateForm"
-import AdminSideNav from '../../components/AdminSideNav';
-import { useContext } from 'react';
-import AdminContext from "../../Context/AdminContext"
+import React from "react";
+import LocationUpdateView from "../../components/LocationUpdateView";
+import LocationUpdateForm from "../../components/LocationUpdateForm";
+import AdminSideNav from "../../components/AdminSideNav";
+import { useContext } from "react";
+import AdminContext from "../../Context/AdminContext";
 
 const LocationUpdate = () => {
   const { admin, setAdmin } = useContext(AdminContext);

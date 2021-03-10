@@ -15,17 +15,16 @@ import LocationCreate from "./pages/LocationCreate";
 import EditLocation from "./pages/LocationUpdate";
 import AdminContext from "./Context/AdminContext";
 
-
 function App() {
-    const [admin, setAdmin] = useState({
-        _id: sessionStorage.getItem("id"),
-        email: sessionStorage.getItem("email")
-      });
-      useEffect(() => {
-        M.AutoInit();
-        sessionStorage.setItem("id", admin._id);
-        sessionStorage.setItem("email", admin.email);
-      }, []);
+  const [admin, setAdmin] = useState({
+    _id: sessionStorage.getItem("id"),
+    email: sessionStorage.getItem("email"),
+  });
+  useEffect(() => {
+    M.AutoInit();
+    sessionStorage.setItem("id", admin._id);
+    sessionStorage.setItem("email", admin.email);
+  }, []);
 
   return (
     <div className="App">
@@ -40,12 +39,32 @@ function App() {
           <AdminContext.Provider value={{ admin, setAdmin }}>
             <Route exact path="/login" component={Login} />
             <Route exact path="/admin/:adminId" component={AdminHome} />
-            <Route exact path="/admin/location/create" component={LocationCreate} />
-            <Route exact path="/admin/location/view" component={ViewLocations} />
-            <Route exact path="/admin/locations/:id/edit" component={EditLocation} />
+            <Route
+              exact
+              path="/admin/location/create"
+              component={LocationCreate}
+            />
+            <Route
+              exact
+              path="/admin/location/view"
+              component={ViewLocations}
+            />
+            <Route
+              exact
+              path="/admin/locations/:id/edit"
+              component={EditLocation}
+            />
             <Route exact path="/admin/item/create" component={ItemCreate} />
-            <Route exact path="/admin/:locationId/items/:id/edit" component={ItemUpdate} />
-            <Route exact path="/admin/locations/:id" component={SingleLocation} />
+            <Route
+              exact
+              path="/admin/:locationId/items/:id/edit"
+              component={ItemUpdate}
+            />
+            <Route
+              exact
+              path="/admin/locations/:id"
+              component={SingleLocation}
+            />
           </AdminContext.Provider>
         </Switch>
       </Router>

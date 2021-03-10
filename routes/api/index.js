@@ -9,6 +9,4 @@ router.use("/locations", locationRoutes);
 router.use("/admin/locations", locationRoutes);
 router.use("/authentication", authentication);
 
-
 module.exports = router;
-

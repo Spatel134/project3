@@ -1,44 +1,42 @@
-
-require("dotenv").config()
+require("dotenv").config();
 const db = require("../models");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 module.exports = {
-    createdNewUser: function (req, res) {
-        console.log(req.body)
-        const userToCreate = {
-            email: req.body.email,
-        }
-        bcrypt.hash(req.body.password, 8, (err, hashedPassword) => {
-
-            if (err) throw new Error(err);
-            userToCreate.password = hashedPassword;
-            db.User.create(userToCreate).then((newUser) => {
-                const token = jwt.sign({ _id: newUser._id }, process.env.SECRET);
-                res.json({ token: token })
-            }).catch(err => {
-                console.log(err);
-                res.status(500).end();
-            })
+  createdNewUser: function (req, res) {
+    const userToCreate = {
+      email: req.body.email,
+    };
+    bcrypt.hash(req.body.password, 8, (err, hashedPassword) => {
+      if (err) throw new Error(err);
+      userToCreate.password = hashedPassword;
+      db.User.create(userToCreate)
+        .then((newUser) => {
+          const token = jwt.sign({ _id: newUser._id }, process.env.SECRET);
+          res.json({ token: token });
         })
-    },
-    loginUser: function (req, res) {
-
-        db.User.findOne({ email: req.body.email.toLowerCase() }).then(foundUser => {
-            bcrypt.compare(req.body.password, foundUser.password, (err, result) => {
-
-                if (result) {
-                    const token = jwt.sign({ _id: foundUser._id }, process.env.SECRET);
-                    res.json({ token: token, email: foundUser.email })
-                } else {
-
-                    res.status(401).end();
-                }
-            })
-        }).catch(err => {
-            console.log(err)
-            res.status(500).end();
-        })
-    }
-}
+        .catch((err) => {
+          console.log(err);
+          res.status(500).end();
+        });
+    });
+  },
+  loginUser: function (req, res) {
+    db.User.findOne({ email: req.body.email.toLowerCase() })
+      .then((foundUser) => {
+        bcrypt.compare(req.body.password, foundUser.password, (err, result) => {
+          if (result) {
+            const token = jwt.sign({ _id: foundUser._id }, process.env.SECRET);
+            res.json({ token: token, email: foundUser.email });
+          } else {
+            res.status(401).end();
+          }
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).end();
+      });
+  },
+};

@@ -14,10 +14,9 @@ router
   .put(locationsController.update)
   .delete(locationsController.remove);
 
-router
-  .route("/:id/addItems")
-  // .get(locationsController.findByIdWithItems)
-  // .post(locationsController.createItem);
+router.route("/:id/addItems");
+// .get(locationsController.findByIdWithItems)
+// .post(locationsController.createItem);
 
 //   router
 //   .route ("/:id/removeItem/:itemId")

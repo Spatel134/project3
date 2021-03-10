@@ -14,8 +14,6 @@ module.exports = {
   },
   create: function (req, res) {
     const id = req.body.selectedLocation;
-    console.log("hellooooo" + id)
-
     const item = {
       name: req.body.name,
       category: req.body.category,
@@ -26,16 +24,13 @@ module.exports = {
     db.Item.create(item)
 
       .then((dbModel) => {
-        console.log(dbModel)
         db.Location.findOneAndUpdate(
           { _id: id },
           { $push: { items: dbModel._id } },
           { new: true }
         ).then((response) => {
-          console.log(response)
           res.json(response);
         });
-
       })
       .catch((err) => res.status(422).json(err));
   },

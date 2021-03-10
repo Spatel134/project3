@@ -15,7 +15,6 @@ const LocationUpdateView = () => {
     axios
       .get(`/api/locations`)
       .then((response) => {
-        console.log(response);
         setLocations(response.data);
       })
       .catch((err) => {
@@ -24,11 +23,9 @@ const LocationUpdateView = () => {
   }, []);
 
   const handleDeleteClick = (_id, name) => {
-    console.log(name);
     axios
       .delete(`/api/locations/${_id}`)
       .then((response) => {
-        console.log(response.data);
         M.toast({ html: `${name} has been removed! ` });
         history.go(0);
       })
@@ -55,7 +52,6 @@ const LocationUpdateView = () => {
                 <strong>{state} </strong>
                 <br />
                 <strong>Manage Location</strong>
- 
 
                 <Link to={`/admin/location/create`}>
                   <a href="javascript:void(0);">
