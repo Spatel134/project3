@@ -17,14 +17,15 @@ import AdminContext from "./Context/AdminContext";
 
 
 function App() {
-  useEffect(() => {
-    M.AutoInit();
-  }, []);
-
-  const [admin, setAdmin] = useState({
-    _id: "",
-    email: "",
-  });
+    const [admin, setAdmin] = useState({
+        _id: sessionStorage.getItem("id"),
+        email: sessionStorage.getItem("email")
+      });
+      useEffect(() => {
+        M.AutoInit();
+        sessionStorage.setItem("id", admin._id);
+        sessionStorage.setItem("email", admin.email);
+      }, []);
 
   return (
     <div className="App">

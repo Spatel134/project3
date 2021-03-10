@@ -21,7 +21,6 @@ const LocationCreateForm = () => {
     axios
       .get(`/api/locations`)
       .then(response => {
-        console.log(response)
         setLocations(response.data)
       })
       .catch(err => {
@@ -31,7 +30,6 @@ const LocationCreateForm = () => {
 
   const handleFormSubmit = event => {
     let isnum = /^\d+$/.test(zipcode)
-    console.log(isnum)
     event.preventDefault()
     !isnum
       ? M.toast({ html: 'Please enter a VALID zip code!' })

@@ -1,64 +1,104 @@
-# Community Chest 
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-## Table of Contents for Community Chest 
-[Description](#About)
-[Installation](#Installation)
-[Usage](#Usage)
-[Technology Used](#Technology)
-[](#Technology Used)
-[Contributing](#Contributing)
+# Community-chest
 
-[Licenses](#Licenses)
-# About
-Community fridges offer free food to those who need it— from fresh produce to home-cooked meals — along with sanitary products and other health-related supplies to communities in need, no questions asked. While they’ve been around for years, community fridges have recently gotten more attention as a way for people to support each other in pandemic times. With our application Community Chest, it makes the maintaining and operation of a community fridge easier by;
-	- Allowing users to add their location to connect them to a network of community fridges.
-	- Access controlled inventory management allowing  items to  be created, updated and deleted.  
-	- Access controlled location management allowing users to  fully manage the creation and editing of new locations.
-	- Allows users of the community to view items in a location before making the trip to the community fridge.
-	- Resources available to users to allow them the information to implement community fridges ihn their own neighborhoods.
+---
+ ## Description
+  Community-Chest fridge's offer free food — from fresh produce to home-cooked meals — along with sanitary products and other health-related supplies to communities in need, no questions asked.
+  
+  
+  Visit us at [Community-chest](https://community-chest134.herokuapp.com/)     
 
+---
+  ## Table of Contents
+- [Community-chest](#community-chest)
+	- [Description](#description)
+	- [Table of Contents](#table-of-contents)
+	- [Wireframe](#wireframe)
+	- [ERD](#erd)
+	- [DEMO:](#demo)
+	- [Preview:](#preview)
+	- [Installation](#installation)
+	- [License](#license)
+	- [Contributions](#contributions)
+
+
+  
+---
+## Wireframe 
+![Wireframe-login](./client/src/assets/images/wireframe-login.png)
+
+![Wireframe-home](./client/src/assets/images/wireframe-home.png)
+
+![Wireframe-items](./client/src/assets/images/wireframe-items.png)
+
+![Wireframe-viewitems-user](./client/src/assets/images/wireframe-viewitems-user.png)
+
+![Wireframe-viewitems-admin](./client/src/assets/images/wireframe-viewitems-admin.png)
+
+---
+## ERD 
+![ERD](./client/src/assets/images/erd.png)
+
+---
+## DEMO:
+![DEMO](./client/src/assets/images/Community-chest.gif)
+
+## Preview: 
+![Login](./client/src/assets/images/login.png)
+
+![Homepage](./client/src/assets/images/homepage.png)
+
+![viewitems-user](./client/src/assets/images/viewitems-user.png)
+
+![viewitems-admin](./client/src/assets/images/viewitems-admin.png)
+
+
+---
 ## Installation
-1. Clone the repo git clone https://github.com/spatel134/Project3
-2. Install NPM packages
-3. npm install
-4. npm start
-5. run application in your local host
+ - Bring this repo to local machine. 
+ - Run on Visual Studio Code and open a terminal. 
+ - Once terminal is open, you will need run `npm install` in the terminal. 
+ - Once installed, run "npm start". 
+ - Then open a browser and test if the platform is functioning on "Localhost:3000". 
+ 
+ Visit us at [Community-chest](https://community-chest134.herokuapp.com/)     .  
+ Admin usage: 
 
-## Usage
-View the deployed website at 
-## Technology 
+ `Username: test@gmail.com`
 
-• Materialize CSS
-• Javascript
-• CSS
-• React 
-• Moment js
-• Google Maps
-• Node Js
-• Express
-• React Router
-• Mongoose
-• Mongo DB
-• Heroku
-• Mysql
-• Robo3t
 
-## Contributing
-This project could not have been created with out the work of these talented developers. Click the link to be taken to their Github profile.
-If you would like to contribute, please reach out to one of the development members.
+ `Password: 12345`
 
-[GitHub](https://www.github.com/Andrediop) 
-[GitHub](https://www.github.com/Spatel134) 
-[GitHub](https://www.github.com/alsharifnahas) 
-[GitHub](https://www.github.com/Glorvi23) 
+---
 
-## License
-This project is covered under the following 
-license:
-[BSD](https://opensource.org/licenses/BSD-3-Clause)
+## License  
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Copyright 2021
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+## Contributions
+Special thanks to Georgia Tech Boot-camp staff for the positive feedback and support. 
+
+Production Team:
+
+- [Andre Diop](https://github.com/AndreDiop)
+- [Alsharif Eid](https://github.com/alsharifnahas)
+- [Caleb Glorvigen](https://github.com/Glorvi23)
+- [Sahil Patel](https://github.com/Spatel134)
+
+---
+
+Visit us at [Community-chest](https://community-chest134.herokuapp.com/)     ! 
+
+ Admin usage: 
+
+ `Username: test@gmail.com`
+
+
+ `Password: 12345`
+
+ *Please use Google Chrome browser*
