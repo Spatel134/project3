@@ -2,14 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import M from 'materialize-css'
 import { useEffect } from 'react'
-
+import Logo from"../../assets/images/logo.png"
 const Sidenav = () => {
   useEffect(() => {
     M.AutoInit()
   }, [])
   return (
     <>
-      <nav> </nav>
+      <nav> 
+      <a href="#" className="brand-logo center"><img alt="community chest logo"src={Logo} width="46%"/></a>
+      </nav>
 
       <ul id='slide-out' className='sidenav'>
         <li>
@@ -87,7 +89,7 @@ To do: Add a contact page
         </li>
       </ul>
       <a href='html#' data-target='slide-out' className='sidenav-trigger'>
-        <i className=' grey-text large material-icons'>kitchen</i>
+        <i className=' black-text large material-icons'>kitchen</i>
       </a>
     </>
   )
